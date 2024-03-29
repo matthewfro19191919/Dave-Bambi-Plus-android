@@ -2441,6 +2441,24 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				globalOffset = [80, 120];
+			case 'hamu':
+				frames = Paths.getSparrowAtlas('characters/HAMU', 'shared');
+
+				animation.addByIndices('idle', 'idle', [2, 1, 0], "", 24, false);
+				animation.addByPrefix('singUP', 'up', 24);
+				animation.addByPrefix('singRIGHT', 'right', 24);
+				animation.addByPrefix('singDOWN', 'down', 24);
+				animation.addByPrefix('singLEFT', 'left', 24);
+				loadOffsetFile(curCharacter);
+				
+				globalOffset = [300, 405];
+				barColor = FlxColor.fromRGB(255, 108, 0);
+
+				playAnim('idle');
+				antialiasing = false;
+				nativelyPlayable = true;
+				flipX = true;
+
 		}
 		dance();
 

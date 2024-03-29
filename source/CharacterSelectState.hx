@@ -228,6 +228,9 @@ class CharacterSelectState extends MusicBeatState
 		new CharacterInSelect('kogre', [1, 1, 1, 1], [
 			new CharacterForm('kogre', 'Kogre', [1,1,1,1]),
 		]), 
+		new CharacterInSelect('hamu', [1, 1, 1, 1], [		
+			new CharacterForm('hamu', 'Hamu', [1,1,1,1]),
+		]),
 		new CharacterInSelect('shaggy', [1, 1, 1, 1], [
 			new CharacterForm('shaggy', 'Shaggy', [1, 1, 1, 1]),
 			new CharacterForm('supershaggy', 'Shaggy (0.001%)', [1, 1, 1, 1]),
