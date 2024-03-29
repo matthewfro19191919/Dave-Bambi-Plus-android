@@ -2457,7 +2457,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				antialiasing = false;
 				nativelyPlayable = true;
-				flipX = true;
+				flipX = false;
 
 		}
 		dance();
