@@ -257,6 +257,7 @@ class CharacterSelectState extends MusicBeatState
 		unlockCharacter('bf-chip');
 		unlockCharacter('tails');
 		unlockCharacter('sticky');
+		unlockCharacter('hamu');
 		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
 		{
 			if (FlxG.fullscreen)
