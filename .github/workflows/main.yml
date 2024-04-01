@@ -58,7 +58,7 @@ jobs:
           haxelib git faxe https://github.com/uhrobots/faxe
           haxelib git polymod https://github.com/larsiusprime/polymod.git
           haxelib install hxcpp-debug-server
-          haxelib listet
+          haxelib list
       - name: Skip SScript setup mode
         run: echo 'oy9:showMacroty8:loopCosti25y10:includeAllfg' >> ~/settings.cocoa
       - name: Create Version Tag
