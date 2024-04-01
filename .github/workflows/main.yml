@@ -245,7 +245,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        name: Build settings from command line:
+      - name: Build settings from command line
          PLATFORM_NAME = iphoneos
          SDKROOT = iphoneos16.2
       - uses: krdlab/setup-haxe@master
