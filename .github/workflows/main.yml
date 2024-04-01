@@ -239,8 +239,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Android Build
-
- buildIos:
+  buildIos:
     runs-on: macos-latest
 
     steps:
