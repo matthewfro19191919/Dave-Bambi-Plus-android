@@ -1,11 +1,5 @@
 name: Main
-# Controls when the action will run.
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ main, experimental ]
-  pull_request:
-    branches: [ main, experimental ]
+on: workflow_dispatch
 jobs:
   Windows:
     runs-on: windows-latest
@@ -18,36 +12,12 @@ jobs:
         with:
           haxe-version: 4.3.4
 
-
-      # Runs a set of commands using the runners shell
-      - name: Install Haxelib
+      - name: Install Libraries
         run: |
-          haxelib setup C:/haxelib
-          haxelib install hxcpp > nul
-          haxelib install lime 8.0.0
-          haxelib install openfl
-          haxelib install flixel 4.11.0
-          haxelib run lime setup flixel
-          haxelib run lime setup         
-          haxelib remove flixel-addons
-          haxelib remove flixel-tools
-          haxelib remove flixel-ui
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons 2.9.0
-          haxelib install tjson
-          haxelib install hxjsonast
-          haxelib install hxCodec 2.5.1
-          haxelib install linc_luajit
-          haxelib install hscript
-          haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod.git
-          haxelib install hxcpp-debug-server
-          haxelib list
-        shell: cmd
+          haxelib setup C:\haxelib
+          haxelib install hmm --quiet
+          haxelib run hmm install --quiet
+
       - name: Compile
         run: haxelib run lime build windows
 
@@ -73,32 +43,11 @@ jobs:
         run: |
           DEBIAN_FRONTEND=noninteractive sudo apt-get -qq install -o Dpkg::Progress-Fancy="0" -o APT::Color="0" -o Dpkg::Use-Pty="0" libvlc-dev libvlccore-dev < /dev/null > /dev/null
           haxelib setup ~/haxelib
-          haxelib install hxcpp > nul
-          haxelib install lime 8.0.0
-          haxelib install openfl
-          haxelib install flixel 4.11.0
-          haxelib run lime setup flixel
-          haxelib run lime setup         
-          haxelib remove flixel-addons
-          haxelib remove flixel-tools
-          haxelib remove flixel-ui
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons 2.9.0
-          haxelib install tjson
-          haxelib install hxjsonast
-          haxelib install hxCodec 2.5.1
-          haxelib install linc_luajit
-          haxelib install hscript
-          haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod.git
-          haxelib install hxcpp-debug-server
-          haxelib list
-
+          haxelib install hmm --quiet
+          haxelib run hmm install --quiet
+          haxelib remove hxCodec
           haxelib --never install hxCodec --quiet
+
       - name: Compile
         run: haxelib run lime build linux
 
@@ -126,29 +75,9 @@ jobs:
       - name: Install Libraries
         run: |
           haxelib setup ~/haxelib
-          haxelib install hxcpp > nul
-          haxelib install lime 8.0.0
-          haxelib install openfl
-          haxelib install flixel 4.11.0
-          haxelib run lime setup flixel
-          haxelib run lime setup         
-          haxelib remove flixel-addons
-          haxelib remove flixel-tools
-          haxelib remove flixel-ui
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons 2.9.0
-          haxelib install tjson
-          haxelib install hxjsonast
-          haxelib install hxCodec 2.5.1
-          haxelib install linc_luajit
-          haxelib install hscript
-          haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod.git
-          haxelib install hxcpp-debug-server
+          haxelib install hmm --quiet
+          haxelib run hmm install --quiet
+
       - name: Compile
         run: haxelib run lime build mac
 
@@ -188,29 +117,9 @@ jobs:
       - name: Install Libraries
         run: |
           haxelib setup ~/haxelib
-          haxelib install hxcpp > nul
-          haxelib install lime 8.0.0
-          haxelib install openfl
-          haxelib install flixel 4.11.0
-          haxelib run lime setup flixel
-          haxelib run lime setup         
-          haxelib remove flixel-addons
-          haxelib remove flixel-tools
-          haxelib remove flixel-ui
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons 2.9.0
-          haxelib install tjson
-          haxelib install hxjsonast
-          haxelib install hxCodec 2.5.1
-          haxelib install linc_luajit
-          haxelib install hscript
-          haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod.git
-          haxelib install hxcpp-debug-server
+          haxelib install hmm --quiet
+          haxelib run hmm install --quiet
+
       - name: Configure Android
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
@@ -244,40 +153,19 @@ jobs:
       - name: Install Libraries
         run: |
           haxelib setup ~/haxelib
-          haxelib install hxcpp > nul
-          haxelib install lime 8.0.0
-          haxelib install openfl
-          haxelib install flixel 4.11.0
-          haxelib run lime setup flixel
-          haxelib run lime setup         
-          haxelib remove flixel-addons
-          haxelib remove flixel-tools
-          haxelib remove flixel-ui
-          haxelib install flixel-tools
-          haxelib install flixel-ui
-          haxelib install flixel-addons 2.9.0
-          haxelib install tjson
-          haxelib install hxjsonast
-          haxelib install hxCodec 2.5.1
-          haxelib install linc_luajit
-          haxelib install hscript
-          haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
-          haxelib git faxe https://github.com/uhrobots/faxe
-          haxelib git polymod https://github.com/larsiusprime/polymod.git
-          haxelib install hxcpp-debug-server
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
+
       - name: Compile
-        run: haxelib run lime build ios -D NOVIDEO -D officialBuild -final
+        run: haxelib run lime build ios -D NOVIDEO
 
       - name: Make Ipa
         run: |
           cd export/release/ios/build/*-iphoneos
           mkdir Payload
           mv *.app Payload
-          zip -r  Testing.ipa Payload
+          zip -r PsychEngine.ipa Payload
+
       - name: Upload Artifact
         if: ${{ success() }}
         uses: actions/upload-artifact@main
