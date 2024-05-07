@@ -490,6 +490,8 @@ class PlayState extends MusicBeatState
 	public static var chipflakeVoice:Bool = false;
 	public static var expungedVoice:Bool = false;
 	public static var stickybmVoice:Bool = false;
+	public static var eeveeVoice:Bool = false;
+	public static var xoVoice:Bool = false;
 	var isShaggy:Bool = false;
     var isKogre:Bool = false;
     var isTails:Bool = false;
@@ -497,6 +499,8 @@ class PlayState extends MusicBeatState
     var isChipFlake:Bool = false;
     var isExpunged:Bool = false;
     var isStickyBM:Bool = false;
+    var isEevee:Bool = false;
+    var isXo:Bool = false;
 	var legs:FlxSprite;
 	var shaggyT:FlxTrail;
 	var legT:FlxTrail;
@@ -1147,6 +1151,8 @@ class PlayState extends MusicBeatState
                 isChipFlake = boyfriend.curCharacter == 'bf-chip';
                 isExpunged = boyfriend.curCharacter == 'bambi-3d' || boyfriend.curCharacter == 'bambi-3d-recursed' || boyfriend.curCharacter == 'bambi-unfair' || boyfriend.curCharacter == 'expunged' || boyfriend.curCharacter == 'expunged-mad';
                 isStickyBM = boyfriend.curCharacter == 'sticky';
+                isEevee = boyfriend.curCharacter == 'eevee';
+                isXo = boyfriend.curCharacter == 'xo';
 
 		switch (stageCheck)
 		{
@@ -1225,6 +1231,8 @@ class PlayState extends MusicBeatState
 				if (isChipFlake) boyfriend.setPosition(770, 150);
 				if (isStickyBM) boyfriend.setPosition(770, 150);
 				if (isConner) boyfriend.setPosition(770, 150);
+				if (isEevee) boyfriend.setPosition(770, 150);
+				if (isXo) boyfriend.setPosition(770, 150);
 			case 'green-void':
 				if (isShaggy) {
 					boyfriend.x += 150;
@@ -1307,8 +1315,12 @@ class PlayState extends MusicBeatState
 		chipflakeVoice = isChipFlake && ['interdimensional'].contains(SONG.song.toLowerCase());
 
 		expungedVoice = isExpunged && ['recursed'].contains(SONG.song.toLowerCase());
-		
+
 		stickybmVoice = isStickyBM && ['interdimensional'].contains(SONG.song.toLowerCase());
+
+		eeveeVoice = isEevee && ['interdimensional'].contains(SONG.song.toLowerCase());
+
+		xoVoice = isXo && ['interdimensional'].contains(SONG.song.toLowerCase());
 		generateSong(SONG.song);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -2539,7 +2551,7 @@ class PlayState extends MusicBeatState
 				sprites.add(expungedBG);
 				add(expungedBG);
 				voidShader(expungedBG);
-			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell":
+			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell" | 'cosbihell':
 				bgZoom = 0.7;
 
 				var bg:BGSprite = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
@@ -2570,6 +2582,11 @@ class PlayState extends MusicBeatState
 						bg.setGraphicSize(Std.int(bg.width * 2.55), Std.int(bg.height * 2));
 					        weirdBG = bg;
 					        stageName = 'banana-land';
+					case 'cosbihell':
+						stageName = 'cosbistage';
+						bg.loadGraphic(Paths.image('backgrounds/void/crible'));
+						bg.setPosition(-1800, -550);
+						bg.setGraphicSize(Std.int(bg.width * 3));
 				}
 				sprites.add(bg);
 				add(bg);
@@ -3525,6 +3542,12 @@ class PlayState extends MusicBeatState
 
 		if (isStickyBM && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : stickybmVoice ? "StickyBM" : ""));
+
+		if (isEevee && SONG.needsVoices)
+			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : eeveeVoice ? "Eevee" : ""));
+
+		if (isXo && SONG.needsVoices)
+			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : xoVoice ? "XO" : ""));
 
 		FlxG.sound.list.add(vocals);
 
@@ -8434,6 +8457,24 @@ class PlayState extends MusicBeatState
 							iconP2.changeIcon(dad.curCharacter);
 							dad.canDance = false;
 							dad.animation.play('scared', true);
+					}
+				case 'wacky':
+					switch (curStep)
+					{
+						case 926:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub1'), 0.02, 0.5);
+						case 943:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub2'), 0.02, 0.5);
+						case 961:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub3'), 0.02, 0.5);
+						case 973:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub4'), 0.02, 0.5);
+						case 1001:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub5'), 0.02, 0.5);
+						case 1010:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub6'), 0.02, 0.5);
+						case 1016:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub7'), 0.02, 0.5);
 					}
 				case 'interdimensional':
 					switch(curStep)

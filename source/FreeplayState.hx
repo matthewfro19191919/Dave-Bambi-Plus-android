@@ -81,6 +81,8 @@ class FreeplayState extends MusicBeatState
 		0xFF000000,    // dan
 		FlxColor.fromRGB(216, 176, 87), // Doge
 		FlxColor.fromRGB(125, 64, 178), // Nebula
+		FlxColor.fromRGB(74, 81, 204), // Wacky
+		FlxColor.fromRGB(14, 17, 91), // Cosbi
     ];
 	public static var skipSelect:Array<String> = 
 	[
@@ -141,7 +143,9 @@ class FreeplayState extends MusicBeatState
         'omission',
 		'doge-vs-bambi',
 		'interdimensional-zorua',
-		'corrupted-farmer'
+		'corrupted-farmer',
+		'wacky',
+		'melophobia'
 	];
 
 	private var camFollow:FlxObject;
@@ -215,7 +219,7 @@ class FreeplayState extends MusicBeatState
 		}
 		if (FlxG.save.data.terminalFound && !awaitingExploitation)
 		{
-			Catagories = ['dave', 'joke', 'extras', 'dave2.5', 'classic', 'cover', 'fanmade', 'terminal', 'pibby'];
+			Catagories = ['dave', 'joke', 'extras', 'dave2.5', 'classic', 'cover', 'fanmade', 'terminal', 'pibby', 'cosbi'];
 			translatedCatagory = [
 				LanguageManager.getTextString('freeplay_dave'),
 				LanguageManager.getTextString('freeplay_joke'),
@@ -225,7 +229,8 @@ class FreeplayState extends MusicBeatState
 				LanguageManager.getTextString('freeplay_cover'),
 				LanguageManager.getTextString('freeplay_fanmade'),
 				LanguageManager.getTextString('freeplay_terminal'),
-				LanguageManager.getTextString('freeplay_pibby')];
+				LanguageManager.getTextString('freeplay_pibby'),
+				LanguageManager.getTextString('freeplay_cosbi')];
 		}
 
 		for (i in 0...Catagories.length)
@@ -402,6 +407,7 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Importumania'], 14, ['importumania']);
 				addWeek(['omission'], 21, ['dan']);
 				addWeek(['Doge-Vs-Bambi'], 22, ['doge']);
+				addWeek(['Wacky'], 24, ['peabrain']);
 			case 'cover':
 				addWeek(['Confronting-Yourself'], 4, ['tristan-festival']);
 				addWeek(['Cob', 'Super-Saiyan'], 1, ['dave', 'dave-annoyed']);
@@ -423,6 +429,8 @@ class FreeplayState extends MusicBeatState
 				addWeek(['Enter Terminal'], 17, ['terminal']);
 			case 'pibby':
 				addWeek(['Corrupted-Farmer'], 2, ['bambi2']);
+			case 'cosbi':
+				addWeek(['melophobia'], 25, ['cosbi']);
 		}
 	}
 

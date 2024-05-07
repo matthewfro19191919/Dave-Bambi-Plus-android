@@ -95,7 +95,8 @@ class CharacterSelectState extends MusicBeatState
 	[
 		new CharacterInSelect('bf', [1, 1, 1, 1], [
 			new CharacterForm('bf', 'Boyfriend', [1,1,1,1]),
-			new CharacterForm('bf-pixel', 'Pixel Boyfriend', [1,1,1,1])
+			new CharacterForm('bf-pixel', 'Pixel Boyfriend', [1,1,1,1]),
+			new CharacterForm('bf-3d', '3D Boyfriend', [1,1,1,1], '3D'),
 		]),
 		new CharacterInSelect('dave', [0.25, 0.25, 2, 2], [
 			new CharacterForm('dave', 'Dave', [0.25, 0.25, 2, 2]),
@@ -213,6 +214,15 @@ class CharacterSelectState extends MusicBeatState
 		new CharacterInSelect('kapi', [1, 1, 1, 1], [
 			new CharacterForm('kapi', 'Kapi', [1, 1, 1, 1]),
 		]),
+		new CharacterInSelect('sprigatito', [1, 1, 1, 1], [
+			new CharacterForm('sprigatito', 'Sprigatito', [1, 1, 1, 1]),
+		]),
+		new CharacterInSelect('xo', [1, 1, 1, 1], [		
+			new CharacterForm('xo', 'XO', [1,1,1,1]),
+		]),
+		new CharacterInSelect('eevee', [1, 1, 1, 1], [		
+			new CharacterForm('eevee', 'Eevee', [1,1,1,1]),
+		]),
 		new CharacterInSelect('sticky', [1, 1, 1, 1], [
 			new CharacterForm('sticky', 'StickyBM', [1,1,1,1]),
 		]),
@@ -227,7 +237,7 @@ class CharacterSelectState extends MusicBeatState
 		]),
 		new CharacterInSelect('kogre', [1, 1, 1, 1], [
 			new CharacterForm('kogre', 'Kogre', [1,1,1,1]),
-		]), 
+		]),
 		new CharacterInSelect('hamu', [1, 1, 1, 1], [		
 			new CharacterForm('hamu', 'Hamu', [1,1,1,1]),
 		]),
@@ -257,7 +267,11 @@ class CharacterSelectState extends MusicBeatState
 		unlockCharacter('bf-chip');
 		unlockCharacter('tails');
 		unlockCharacter('sticky');
+		unlockCharacter('eevee');
+		unlockCharacter('xo');
 		unlockCharacter('hamu');
+		unlockCharacter('bf-3d');
+		unlockCharacter('sprigatito');
 		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
 		{
 			if (FlxG.fullscreen)
@@ -667,6 +681,7 @@ class CharacterSelectState extends MusicBeatState
 		FlxG.save.data.charactersUnlocked = new Array<String>();
 		unlockCharacter('bf');
 		unlockCharacter('bf-pixel');
+		unlockCharacter('bf-3d');
 		FlxG.save.flush();
 	}
 
