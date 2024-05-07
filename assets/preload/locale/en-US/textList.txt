@@ -43,6 +43,7 @@ freeplay_fanmade==Fan Made
 freeplay_scrapped==Scrapped
 freeplay_terminal==Console
 freeplay_pibby==Pibby
+freeplay_cosbi==Cosbi
 
 freeplay_personalBest==PERSONAL BEST:
 freeplay_hard==HARD
@@ -151,6 +152,7 @@ story_festivalWeek==Bambi’s Corn Festival!
 story_masterWeek==Bambi's Master Week!
 story_masterWeekToPlay==?????????
 story_pibbybambiWeek==corrupted farm
+story_CosbiWeek==cosbi's epic return
 
 // CHARACTER SELECT STATE //
 character_reset==Press R To Reset
@@ -437,6 +439,15 @@ foolhardy_sub6==Oh is not me is Marcello he dead...
 foolhardy_sub6.1==NOW IS!!! fuck you...
 foolhardy_sub7==He dead, Rest In Peace!
 
+//SUBTITLES
+// Wacky Subtitles //
+wacky_sub1==Behold..
+wacky_sub2==of the king...
+wacky_sub3==of...
+wacky_sub4==Voice Acting!
+wacky_sub5==OPEN THE
+wacky_sub6==GATE YOU
+wacky_sub7==FUCK!!!
 
 3d_gameOver_polygonized==You've been Polygonized!
 3d_gameOver_restart==Restart?
