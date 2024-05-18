@@ -351,8 +351,8 @@ class PlayState extends MusicBeatState
 	var lastSinger:Character;
 	var hat:BGSprite;
 
-	var bg:BGSprite();
-	var bgFire:BGSprite();
+	var bg:BGSprite;
+	var bgFire:BGSprite;
 
 	var crowdPeople:FlxTypedGroup<BGSprite> = new FlxTypedGroup<BGSprite>();
 	
