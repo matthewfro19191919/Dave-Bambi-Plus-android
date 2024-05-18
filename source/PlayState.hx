@@ -2918,6 +2918,23 @@ class PlayState extends MusicBeatState
 	    		bg.screenCenter(XY);
 		    	add(bg);
 	
+		    case 'slave':
+	     		defaultCamZoom = 0.9;
+     			curStage = 'minecraft';
+	    		var bg:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the-new-dave-mod/slave_bg));
+	    		// bg.setGraphicSize(Std.int(bg.width * 1));
+    			// bg.updateHitbox();
+	    		bg.antialiasing = true;
+		    	bg.active = false;
+		    	add(bg);
+
+	    		var bgFire:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the_new_dave_mod/slave_bg));
+	    		// bgFire.setGraphicSize(Std.int(bgFire.width * 1));
+    			// bgFire.updateHitbox();
+	    		bgFire.antialiasing = true;
+		    	bgFire.active = false;
+		    	add(bgFire);
+
 			default:
 				bgZoom = 0.9;
 				stageName = 'stage';
@@ -7580,6 +7597,13 @@ class PlayState extends MusicBeatState
 					noteMiss(note.noteData, note);
 			}
 			return;
+		}
+		switch (curSong.toLowerCase())
+		{
+			case 'super-pave':
+				if note.noteData = 1 {
+				dad.scale.set(dad.scale.y * 0.99);
+		                }
 		}
 		var upP = controls.UP_P;
 		var rightP = controls.RIGHT_P;
