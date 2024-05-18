@@ -2879,7 +2879,7 @@ class PlayState extends MusicBeatState
 		    case 'slave':
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var bg:BGSprite = new BGSprite("the-new-dave-mod/slave_bg", -1100, -70, [
+	    		var bg:BGSprite = new BGSprite('slave_bg', 'the-new-dave-mod/slave_bg', -1100, -70, [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
 				], 0.9, 0.9, true, true);
 	    		// bg.setGraphicSize(Std.int(bg.width * 1);
@@ -2889,7 +2889,7 @@ class PlayState extends MusicBeatState
                         bg.visible = true;
 		    	add(bg);
 
-	    		var bgFire:BGSprite = new BGSprite("the_new_dave_mod/slave_bg_Fire", -1100, -70, [
+	    		var bgFire:BGSprite = new BGSprite('slave_bg_Fire', 'the_new_dave_mod/slave_bg_Fire', -1100, -70, [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
 				], 0.9, 0.9, true, true);
 	    		// bgFire.setGraphicSize(Std.int(bgFire.width * 1));
@@ -8119,6 +8119,8 @@ class PlayState extends MusicBeatState
 	var shapeNoteWarning2 = new FlxSprite();
 	var curECCCharacter:String = "cockey";
 	var staticBG = new FlxSprite();
+	var bg = new BGSprite();
+	var bgFire = new BGSprite();
 
 	override function stepHit()
 		{
