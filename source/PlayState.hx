@@ -1259,6 +1259,18 @@ class PlayState extends MusicBeatState
 				gf.y += 140;
 				boyfriend.x += 80;
 				boyfriend.y += 140;
+			case 'slave':
+				dad.setPosition(357, 705);
+				boyfriend.setPosition(905, 635);
+				gf.setPosition(576, 672);
+			case 'superpave':
+				dad.setPosition(57.2, 8.85);
+				boyfriend.setPosition(57.2, 8.85);
+				gf.setPosition(400.2, -175.55);
+			case 'white':
+				dad.setPosition(307, 635);
+				boyfriend.setPosition(885, 223);
+				gf.setPosition(576, 672);
 		}
 
 		switch (stageCheck)
@@ -2864,60 +2876,29 @@ class PlayState extends MusicBeatState
 				maze.antialiasing = true;
 				sprites.add(maze);
 				add(maze);
-
-		    case 'minecraft':
+		    case 'slave':
 	     		defaultCamZoom = 0.9;
-     			curStage = 'minecraft';
-	    		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("backgrounds/random3dstuff/flatland"));
-	    		// bg.setGraphicSize(Std.int(bg.width * 2.5));
+     			curStage = 'slave';
+	    		var bg:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the-new-dave-mod/slave_bg", [
+					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
+				], 0.9, 0.9, true, true);));
+	    		// bg.setGraphicSize(Std.int(bg.width * 1);
     			// bg.updateHitbox();
 	    		bg.antialiasing = true;
-		    	bg.scrollFactor.set(0.9, 0.9);
 		    	bg.active = false;
-	    		bg.screenCenter(XY);
+                        bgFire.visible = true;
 		    	add(bg);
 
-		    case 'checker':
-		    	defaultCamZoom = 0.66;
-    			curStage = 'checker';
-	    		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("backgrounds/random3dstuff/redfloor"));
-		    	// bg.setGraphicSize(Std.int(bg.width * 2.5));
-		    	// bg.updateHitbox();
-		    	bg.antialiasing = true;
-	    		// bg.scrollFactor.set(0.66, 0.66);
-			    bg.active = false;
-		    	bg.screenCenter(XY);
-	    		add(bg);
+	    		var bgFire:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the_new_dave_mod/slave_bg_Fire", [
+					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
+				], 0.9, 0.9, true, true);));));
+	    		// bgFire.setGraphicSize(Std.int(bgFire.width * 1));
+    			// bgFire.updateHitbox();
+	    		bgFire.antialiasing = true;
+		    	bgFire.active = false;
+                        bgFire.visible = false;
+		    	add(bgFire);
 
-		    case 'crashStage':
-		    	defaultCamZoom = 0.8;
-    			curStage = 'crashStage';
-	    		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("backgrounds/random3dstuff/rockslide"));
-  	    		bg.antialiasing = true;
-    			bg.active = false;
-		    	bg.screenCenter(XY);
-	    		add(bg);
-
-		    case 'fnafStage':
-		    	defaultCamZoom = 0.85;
-		    	curStage = 'fnafStage';
-			    var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("backgrounds/random3dstuff/bedroom"));
-	     		bg.antialiasing = true;
-		    	bg.active = false;
-		    	bg.setGraphicSize(Std.int(bg.width * 0.9));
-		    	bg.updateHitbox();
-    			bg.screenCenter(XY);
-	    		add(bg);
-
-		    case 'skeletonStage':
-		    	defaultCamZoom = 0.8;
-     			curStage = 'skeletonStage';
-	    		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image("backgrounds/random3dstuff/darkness"));
-		    	bg.antialiasing = true;
-		    	bg.active = false;
-	    		bg.screenCenter(XY);
-		    	add(bg);
-	
 			default:
 				bgZoom = 0.9;
 				stageName = 'stage';
@@ -7581,6 +7562,13 @@ class PlayState extends MusicBeatState
 			}
 			return;
 		}
+		switch (curSong.toLowerCase())
+		{
+			case 'super-pave':
+				if note.noteData = 1 {
+				dad.scale.set(dad.scale.y * 0.99);
+		                }
+		}
 		var upP = controls.UP_P;
 		var rightP = controls.RIGHT_P;
 		var downP = controls.DOWN_P;
@@ -8475,6 +8463,14 @@ class PlayState extends MusicBeatState
 							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub6'), 0.02, 0.5);
 						case 1016:
 							subtitleManager.addSubtitle(LanguageManager.getTextString('wacky_sub7'), 0.02, 0.5);
+					}
+				case 'freedom':
+					switch (curStep)
+					{
+						case 0:
+							bgFire.visible = true;
+						case 0:
+							bg.visible = false;
 					}
 				case 'interdimensional':
 					switch(curStep)
