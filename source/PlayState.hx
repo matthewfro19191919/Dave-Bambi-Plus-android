@@ -7562,13 +7562,6 @@ class PlayState extends MusicBeatState
 			}
 			return;
 		}
-		switch (curSong.toLowerCase())
-		{
-			case 'super-pave':
-				if daNote.noteData = 1 {
-				dad.scale.set(dad.scale.y * 0.99);
-		                }
-		}
 		var upP = controls.UP_P;
 		var rightP = controls.RIGHT_P;
 		var downP = controls.DOWN_P;
