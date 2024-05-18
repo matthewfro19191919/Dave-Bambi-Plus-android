@@ -219,7 +219,7 @@ class FreeplayState extends MusicBeatState
 		}
 		if (FlxG.save.data.terminalFound && !awaitingExploitation)
 		{
-			Catagories = ['dave', 'joke', 'extras', 'dave2.5', 'classic', 'cover', 'fanmade', 'terminal', 'pibby', 'cosbi'];
+			Catagories = ['dave', 'joke', 'extras', 'dave2.5', 'classic', 'cover', 'fanmade', 'terminal', 'pibby', 'cosbi', 'the_new_dave_mod'];
 			translatedCatagory = [
 				LanguageManager.getTextString('freeplay_dave'),
 				LanguageManager.getTextString('freeplay_joke'),
@@ -230,7 +230,8 @@ class FreeplayState extends MusicBeatState
 				LanguageManager.getTextString('freeplay_fanmade'),
 				LanguageManager.getTextString('freeplay_terminal'),
 				LanguageManager.getTextString('freeplay_pibby'),
-				LanguageManager.getTextString('freeplay_cosbi')];
+				LanguageManager.getTextString('freeplay_cosbi'),
+				LanguageManager.getTextString('freeplay_the_new_dave_mod')];
 		}
 
 		for (i in 0...Catagories.length)
@@ -431,6 +432,8 @@ class FreeplayState extends MusicBeatState
 				addWeek(['Corrupted-Farmer'], 2, ['bambi2']);
 			case 'cosbi':
 				addWeek(['melophobia'], 25, ['cosbi']);
+			case 'the_new_dave_mod':
+				addWeek(['cha-cha-slide', 'super-pave', 'slavery', 'freedom'], 26, ['cha', 'superpave', 'slave', 'slave']);
 		}
 	}
 
