@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="slave_bg.png">
+<TextureAtlas imagePath="slave_bg_Fire.png">
 	<!-- Created with Adobe Animate version 19.0.0.326 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="Symbol 30000" x="10" y="10" width="3652" height="1910" frameX="-195" frameY="0" frameWidth="4183" frameHeight="1978"/>
