@@ -222,6 +222,7 @@ class CharacterSelectState extends MusicBeatState
 		]),
 		new CharacterInSelect('eevee', [1, 1, 1, 1], [		
 			new CharacterForm('eevee', 'Eevee', [1,1,1,1]),
+			new CharacterForm('eevee-shiny', 'Shiny Eevee', [1,1,1,1]),
 		]),
 		new CharacterInSelect('sticky', [1, 1, 1, 1], [
 			new CharacterForm('sticky', 'StickyBM', [1,1,1,1]),
@@ -272,6 +273,7 @@ class CharacterSelectState extends MusicBeatState
 		unlockCharacter('hamu');
 		unlockCharacter('bf-3d');
 		unlockCharacter('sprigatito');
+		unlockCharacter('eevee-shiny');
 		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
 		{
 			if (FlxG.fullscreen)
