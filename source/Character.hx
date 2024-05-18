@@ -2513,23 +2513,113 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 			case 'eevee':
-				frames = Paths.getSparrowAtlas('characters/Eevee_sheet', 'shared');
+				frames = Paths.getSparrowAtlas('Eevee/characters/Eevee', 'shared');
 				animation.addByPrefix('idle', 'idle', 24, false);
 				for (anim in ['left', 'down', 'up', 'right'])
 				{
 					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim', 24, false);
 				}
-				barColor = FlxColor.fromRGB(191, 147, 84);
+				
+				animation.addByPrefix('hey', 'hey', 24, false);
+
+				barColor = FlxColor.fromRGB(192, 141, 89);
 
 				loadOffsetFile(curCharacter);
 
-				setGraphicSize(Std.int((width * 2) / furiosityScale));
+				setGraphicSize(Std.int((width * 4) / furiosityScale));
 				globalOffset = [0, 400];
 
 				playAnim('idle');
 				nativelyPlayable = true;
 				flipX = true;
 
+			case 'eevee-shiny':
+				frames = Paths.getSparrowAtlas('Eevee/characters/Eevee_Shiny', 'shared');
+				animation.addByPrefix('idle', 'idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim', 24, false);
+				}
+				
+				animation.addByPrefix('hey', 'hey', 24, false);
+
+				barColor = FlxColor.fromRGB(204, 204, 204);
+
+				loadOffsetFile(curCharacter);
+
+				setGraphicSize(Std.int((width * 4) / furiosityScale));
+				globalOffset = [0, 400];
+
+				playAnim('idle');
+				nativelyPlayable = true;
+				flipX = true;
+			case 'cha':
+				frames = Paths.getSparrowAtlas('the_new_dave_mod/characters/cha', 'shared');
+				animation.addByPrefix('idle', 'idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim', 24, false);
+				}
+				barColor = FlxColor.fromRGB(252, 148, 157);
+
+				loadOffsetFile(curCharacter);
+
+				setGraphicSize(Std.int((width * 1) / furiosityScale));
+				globalOffset = [0, 0];
+
+				playAnim('idle');
+			case 'chicken':
+				frames = Paths.getSparrowAtlas('the_new_dave_mod/characters/chicken', 'shared');
+				animation.addByPrefix('idle', 'cidle', 24, false);
+				animation.addByPrefix('singLEFT', 'bacah', 24, false);
+				animation.addByPrefix('singRIGHT', 'bacah', 24, false);
+				animation.addByPrefix('singUP', 'bacah', 24, false);
+				animation.addByPrefix('singDOWN', 'bacah', 24, false);
+				animation.addByPrefix('bacah', 'bacah', 24, false);
+				barColor = FlxColor.fromRGB(252, 148, 157);
+
+				barColor = FlxColor.fromRGB(196, 193, 191);
+				
+				loadOffsetFile(curCharacter);
+
+				setGraphicSize(Std.int((width * 1) / furiosityScale));
+				globalOffset = [0, 0];
+
+				playAnim('idle');
+			case 'slave':
+				frames = Paths.getSparrowAtlas('the_new_dave_mod/characters/slave', 'shared');
+				animation.addByPrefix('idle', 'Slave Idle', 24, false);
+				animation.addByPrefix('singUP', 'Slave Up', 24);
+				animation.addByPrefix('singRIGHT', 'Slave Right', 24);
+				animation.addByPrefix('singDOWN', 'Slave Down', 24);
+				animation.addByPrefix('singLEFT', 'Slave Left', 24);
+
+				barColor = FlxColor.fromRGB(252, 148, 157);
+
+				loadOffsetFile(curCharacter);
+
+				setGraphicSize(Std.int((width * 1) / furiosityScale));
+				globalOffset = [0, 0];
+
+				playAnim('idle');
+			case 'superpave':
+				frames = Paths.getSparrowAtlas('the_new_dave_mod/characters/superpave', 'shared');
+				animation.addByPrefix('idle', '!idle', 24, false);
+				animation.addByPrefix('singUP', '!up', 24);
+				animation.addByPrefix('singRIGHT', '!right', 24);
+				animation.addByPrefix('singDOWN', '!down', 24);
+				animation.addByPrefix('singLEFT', '!left', 24);
+
+				barColor = FlxColor.fromRGB(252, 148, 157);
+
+				barColor = FlxColor.fromRGB(255, 141, 65);
+				
+				loadOffsetFile(curCharacter);
+
+				setGraphicSize(Std.int((width * 1) / furiosityScale));
+				globalOffset = [0, 0];
+
+				playAnim('idle');
 			case 'xo':
 				frames = Paths.getSparrowAtlas('characters/xo', 'shared');
 				animation.addByPrefix('idle', 'idle', 24, false);
