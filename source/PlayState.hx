@@ -2881,7 +2881,7 @@ class PlayState extends MusicBeatState
      			curStage = 'slave';
 	    		var bg:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the-new-dave-mod/slave_bg", [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
-				], 0.9, 0.9, true, true);));
+				], 0.9, 0.9, true, true));
 	    		// bg.setGraphicSize(Std.int(bg.width * 1);
     			// bg.updateHitbox();
 	    		bg.antialiasing = true;
@@ -2891,7 +2891,7 @@ class PlayState extends MusicBeatState
 
 	    		var bgFire:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the_new_dave_mod/slave_bg_Fire", [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
-				], 0.9, 0.9, true, true);));));
+				], 0.9, 0.9, true, true));
 	    		// bgFire.setGraphicSize(Std.int(bgFire.width * 1));
     			// bgFire.updateHitbox();
 	    		bgFire.antialiasing = true;
