@@ -2879,19 +2879,19 @@ class PlayState extends MusicBeatState
 		    case 'slave':
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var bg:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the-new-dave-mod/slave_bg", [
+	    		var bg:BGSprite = new BGSprite("the-new-dave-mod/slave_bg", -1100, -70, [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
-				], 0.9, 0.9, true, true));
+				], 0.9, 0.9, true, true);
 	    		// bg.setGraphicSize(Std.int(bg.width * 1);
     			// bg.updateHitbox();
 	    		bg.antialiasing = true;
 		    	bg.active = false;
-                        bgFire.visible = true;
+                        bg.visible = true;
 		    	add(bg);
 
-	    		var bgFire:FlxSprite = new FlxSprite(-1100, -70).loadGraphic(Paths.image("the_new_dave_mod/slave_bg_Fire", [
+	    		var bgFire:BGSprite = new BGSprite("the_new_dave_mod/slave_bg_Fire", -1100, -70, [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
-				], 0.9, 0.9, true, true));
+				], 0.9, 0.9, true, true);
 	    		// bgFire.setGraphicSize(Std.int(bgFire.width * 1));
     			// bgFire.updateHitbox();
 	    		bgFire.antialiasing = true;
