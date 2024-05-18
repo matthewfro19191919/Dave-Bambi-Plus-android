@@ -7565,7 +7565,7 @@ class PlayState extends MusicBeatState
 		switch (curSong.toLowerCase())
 		{
 			case 'super-pave':
-				if note.noteData = 1 {
+				if daNote.noteData = 1 {
 				dad.scale.set(dad.scale.y * 0.99);
 		                }
 		}
