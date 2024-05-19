@@ -2860,7 +2860,7 @@ class PlayState extends MusicBeatState
 			{
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var slave_bg:BGSprite = new BGSprite('slave_bg', -1100, -70, 'the_new_dave_mod/slave_bg', [
+	    		var slave_bg:BGSprite = new BGSprite('slave_bg', -1100, -70, 'backgrounds/the_new_dave_mod/slave_bg', [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
 				], 0.9, 0.9, true, true);
 			    slave_bg.animation.play('loop');
@@ -2874,7 +2874,7 @@ class PlayState extends MusicBeatState
 			{
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var slave_bg_Fire:BGSprite = new BGSprite('slave_bg_Fire', -1100, -70, 'the_new_dave_mod/slave_bg_Fire', [
+	    		var slave_bg_Fire:BGSprite = new BGSprite('slave_bg_Fire', -1100, -70, 'backgrounds/the_new_dave_mod/slave_bg_Fire', [
 					new Animation('loop', 'Symbol 3000', 20, true, [false, false])
 				], 0.9, 0.9, true, true);
 			    slave_bg_Fire.animation.play('loop');
@@ -2887,7 +2887,7 @@ class PlayState extends MusicBeatState
 		    case 'white':
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var white:BGSprite = new BGSprite('white', -600, -200, Paths.image('the_new_dave_mod/white'), null, 0.95, 0.95);
+	    		var white:BGSprite = new BGSprite('white', -600, -200, Paths.image('backgrounds/the_new_dave_mod/white'), null, 0.95, 0.95);
 	    		// white.setGraphicSize(Std.int(bg.width * 999);
     			// white.updateHitbox();
 	    		white.antialiasing = true;
@@ -2896,14 +2896,14 @@ class PlayState extends MusicBeatState
 		    case 'superpave':
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var paul:BGSprite = new BGSprite('paul', -882.75, -367.05, ('the_new_dave_mod/paul'), null, 0.95, 0.95);
+	    		var paul:BGSprite = new BGSprite('paul', -882.75, -367.05, ('backgrounds/the_new_dave_mod/paul'), null, 0.95, 0.95);
 	    		// paul.setGraphicSize(Std.int(bg.width * 1);
     			// paul.updateHitbox();
 	    		paul.antialiasing = true;
 		    	paul.active = false;
 		    	add(paul);
 
-	    		var ploor:BGSprite = new BGSprite('ploor', -796.6, 604.3, ('the_new_dave_mod/ploor'), null, 0.95, 0.95);
+	    		var ploor:BGSprite = new BGSprite('ploor', -796.6, 604.3, ('backgrounds/the_new_dave_mod/ploor'), null, 0.95, 0.95);
 			    ploor.animation.play('loop');
 	    		// ploor.setGraphicSize(Std.int(bg.width * 1);
     			// ploor.updateHitbox();
