@@ -1141,7 +1141,7 @@ class PlayState extends MusicBeatState
                 isChipFlake = boyfriend.curCharacter == 'bf-chip';
                 isExpunged = boyfriend.curCharacter == 'bambi-3d' || boyfriend.curCharacter == 'bambi-3d-recursed' || boyfriend.curCharacter == 'bambi-unfair' || boyfriend.curCharacter == 'expunged' || boyfriend.curCharacter == 'expunged-mad';
                 isStickyBM = boyfriend.curCharacter == 'sticky';
-                isEevee = boyfriend.curCharacter == 'eevee';
+                isEevee = boyfriend.curCharacter == 'eevee' || boyfriend.curCharacter == 'eevee-shiny';
                 isXo = boyfriend.curCharacter == 'xo';
 
 		switch (stageCheck)
@@ -2887,12 +2887,12 @@ class PlayState extends MusicBeatState
 		    case 'white':
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
-	    		var white:BGSprite = new BGSprite('white', -600, -200, Paths.image('backgrounds/the_new_dave_mod/white'), null, 0.95, 0.95);
-	    		// white.setGraphicSize(Std.int(bg.width * 999);
-    			// white.updateHitbox();
-	    		white.antialiasing = true;
-		    	white.active = false;
-		    	add(white);
+				blackScreen = new FlxSprite().makeGraphic(FlxG.width * 999, FlxG.height * 999, FlxColor.WHITE);
+				blackScreen.cameras = [camGame];
+				blackScreen.screenCenter();
+				blackScreen.scrollFactor.set();
+				blackScreen.alpha = 0;
+				add(blackScreen);
 		    case 'superpave':
 	     		defaultCamZoom = 0.9;
      			curStage = 'slave';
