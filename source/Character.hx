@@ -2553,6 +2553,28 @@ class Character extends FlxSprite
 				playAnim('idle');
 				nativelyPlayable = true;
 				flipX = true;
+			case 'shinx':
+				frames = Paths.getSparrowAtlas('characters/shinx', 'shared');
+				animation.addByIndices('idle', 'idle', [0,16], "", 24, false);
+				animation.addByIndices('singRIGHT', 'right', [2,3,4,5,6,7,8,9,10,11], "", 24, false);
+				for (anim in ['left', 'down', 'up'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim', 24, false);
+				}
+				
+				animation.addByPrefix('hey', 'hey', 24, false);
+
+				barColor = FlxColor.fromRGB(192, 141, 89);
+
+				loadOffsetFile(curCharacter);
+
+				setGraphicSize(Std.int((width * 4) / furiosityScale));
+				globalOffset = [0, 400];
+
+				playAnim('idle');
+				nativelyPlayable = true;
+				flipX = true;
+
 			case 'cha':
 				frames = Paths.getSparrowAtlas('the_new_dave_mod/characters/cha', 'shared');
 				animation.addByPrefix('idle', 'idle', 24, false);
