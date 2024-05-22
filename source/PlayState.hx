@@ -492,15 +492,17 @@ class PlayState extends MusicBeatState
 	public static var stickybmVoice:Bool = false;
 	public static var eeveeVoice:Bool = false;
 	public static var xoVoice:Bool = false;
+	public static var shinxVoice:Bool = false;
 	var isShaggy:Bool = false;
-    var isKogre:Bool = false;
-    var isTails:Bool = false;
-    var isConner:Bool = false;
-    var isChipFlake:Bool = false;
-    var isExpunged:Bool = false;
-    var isStickyBM:Bool = false;
-    var isEevee:Bool = false;
-    var isXo:Bool = false;
+        var isKogre:Bool = false;
+	var isTails:Bool = false;	
+	var isConner:Bool = false;
+	var isChipFlake:Bool = false;
+	var isExpunged:Bool = false;
+	var isStickyBM:Bool = false;
+	var isEevee:Bool = false;
+	var isXo:Bool = false;
+	var isShinx:Bool = false;
 	var legs:FlxSprite;
 	var shaggyT:FlxTrail;
 	var legT:FlxTrail;
@@ -1143,6 +1145,7 @@ class PlayState extends MusicBeatState
                 isStickyBM = boyfriend.curCharacter == 'sticky';
                 isEevee = boyfriend.curCharacter == 'eevee' || boyfriend.curCharacter == 'eevee-shiny';
                 isXo = boyfriend.curCharacter == 'xo';
+		isShinx = boyfriend.curCharacter == 'shinx';
 
 		switch (stageCheck)
 		{
@@ -1223,6 +1226,7 @@ class PlayState extends MusicBeatState
 				if (isConner) boyfriend.setPosition(770, 150);
 				if (isEevee) boyfriend.setPosition(770, 150);
 				if (isXo) boyfriend.setPosition(770, 150);
+				if (isShinx) boyfriend.setPosition(770, 150);
 			case 'green-void':
 				if (isShaggy) {
 					boyfriend.x += 150;
@@ -1311,6 +1315,8 @@ class PlayState extends MusicBeatState
 		eeveeVoice = isEevee && ['interdimensional'].contains(SONG.song.toLowerCase());
 
 		xoVoice = isXo && ['interdimensional'].contains(SONG.song.toLowerCase());
+
+		shinxVoice = isShinx && ['interdimensional'].contains(SONG.song.toLowerCase());
 		generateSong(SONG.song);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -3541,6 +3547,9 @@ class PlayState extends MusicBeatState
 
 		if (isXo && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : xoVoice ? "XO" : ""));
+		
+		if (isShinx && SONG.needsVoices)
+			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : shinxVoice ? "Shinx" : ""));
 
 		FlxG.sound.list.add(vocals);
 
