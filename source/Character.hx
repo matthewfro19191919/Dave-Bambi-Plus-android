@@ -2555,9 +2555,8 @@ class Character extends FlxSprite
 				flipX = true;
 			case 'shinx':
 				frames = Paths.getSparrowAtlas('characters/shinx', 'shared');
-				animation.addByIndices('idle', 'idle', [0,16], "", 24, false);
-				animation.addByIndices('singRIGHT', 'right', [2,3,4,5,6,7,8,9,10,11], "", 24, false);
-				for (anim in ['left', 'down', 'up'])
+				animation.addByPrefix('idle', 'idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
 				{
 					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim', 24, false);
 				}
