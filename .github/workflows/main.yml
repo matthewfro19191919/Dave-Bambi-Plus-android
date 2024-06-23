@@ -66,7 +66,7 @@ jobs:
       - name: Dowload Artifact
         uses: actions/download-artifact@v4
         with:
-         name: my-artifact
+         name: ReleaseBuild
          path: export/release/windows/bin
       - name: Display structure of downloaded files
         run: ls -R export/release/windows/bin
