@@ -2682,6 +2682,45 @@ class Character extends FlxSprite
 				antialiasing = false;
 				nativelyPlayable = true;
 				flipX = false;
+			case 'question':
+				frames = Paths.getSparrowAtlas('bambi/Question_Bayambo', 'shared');
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24);
+				animation.addByPrefix('singSmash', 'Phone Short', 24, false);
+				
+				barColor = FlxColor.fromRGB(37, 191, 55);
+
+				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+				
+				globalOffset = [37, 90];
+				skins.set('recursed', 'bambi-recursed');
+
+				playAnim('idle');
+			case 'question-playable':
+				frames = Paths.getSparrowAtlas('bambi/Question_BayamboPLAYABLE', 'shared');
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24);
+				animation.addByPrefix('singUPmiss', 'RUp Miss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'WLeft Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'RUp Miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'QDown Miss', 24, false);
+				animation.addByPrefix('singSmash', 'Phone Short', 24, false);
+				
+				barColor = FlxColor.fromRGB(37, 191, 55);
+				
+				globalOffset = [37, 90];
+				playAnim('idle');
+				antialiasing = false;
+				nativelyPlayable = true;
+				flipX = false;
+
+				playAnim('idle');
 
 		}
 		dance();
