@@ -2632,8 +2632,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', '!left', 24);
 
 				barColor = FlxColor.fromRGB(252, 148, 157);
-
-				barColor = FlxColor.fromRGB(255, 141, 65);
 				
 				loadOffsetFile(curCharacter);
 
@@ -2690,8 +2688,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Left', 24);
 				animation.addByPrefix('singSmash', 'Phone Short', 24, false);
-				
-				barColor = FlxColor.fromRGB(37, 191, 55);
+
+				barColor = FlxColor.fromRGB(255, 255, 255);
 
 				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
 				
@@ -2711,8 +2709,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHTmiss', 'RUp Miss', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'QDown Miss', 24, false);
 				animation.addByPrefix('singSmash', 'Phone Short', 24, false);
-				
-				barColor = FlxColor.fromRGB(37, 191, 55);
+
+				barColor = FlxColor.fromRGB(255, 255, 255);
 				
 				globalOffset = [37, 90];
 				playAnim('idle');
