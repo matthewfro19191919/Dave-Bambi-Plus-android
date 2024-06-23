@@ -61,12 +61,10 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: ReleaseBuild
           path: export/release/windows/bin
       - name: Dowload Artifact
         uses: actions/download-artifact@v4
         with:
-         name: ReleaseBuild
          path: export/release/windows/bin
       - name: Display structure of downloaded files
         run: ls -R export/release/windows/bin
