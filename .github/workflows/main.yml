@@ -63,9 +63,6 @@ jobs:
         with:
           name: ReleaseBuild
           path: export/release/windows/bin
-  download:
-    runs-on: windows-latest
-    steps:
       - name: Dowload Artifact
       - uses: actions/download-artifact@v4
         with:
