@@ -2709,6 +2709,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHTmiss', 'RUp Miss', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'QDown Miss', 24, false);
 				animation.addByPrefix('singSmash', 'Phone Short', 24, false);
+				animation.addByPrefix('hey', 'Peace', 24, false);
 
 				barColor = FlxColor.fromRGB(255, 255, 255);
 				
