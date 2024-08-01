@@ -2,10 +2,8 @@
   "dependencies": [
     {
       "name": "lime",
-      "type": "git",
-      "dir": null,
-      "ref": "develop",
-      "url": "https://github.com/mcagabe19-stuff/lime"
+      "type": "haxelib",
+      "version": "8.0.0"
     },
     {
       "name": "openfl",
@@ -15,12 +13,12 @@
     {
       "name": "flixel",
       "type": "haxelib",
-      "version": null
+      "version": "4.11.0"
     },
     {
       "name": "flixel-addons",
       "type": "haxelib",
-      "version": null
+      "version": "2.9.0"
     },
     {
       "name": "flixel-tools",
@@ -34,56 +32,60 @@
     },
     {
       "name": "hxcpp",
-      "type": "git",
-      "dir": null,
-      "ref": "master",
-      "url": "https://github.com/mcagabe19-stuff/hxcpp"
+      "type": "haxelib",
+      "version": null
     },
     {
       "name": "hxCodec",
       "type": "haxelib",
-      "version": "2.6.0"
+      "version": "2.5.1"
     },
     {
-      "name": "SScript",
+      "name": "linc_luajit",
       "type": "haxelib",
       "version": null
     },
     {
-      "name": "hxcpp-debug-server",
-      "type": "haxelib",
-      "version": null
+      "name": "hscript-ex",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/ianharrigan/hscript-ex"
     },
     {
-      "name": "tjson",
-      "type": "haxelib",
-      "version": null
-    },
-    {
-      "name": "hxdiscord_rpc",
-      "type": "haxelib",
-      "version": null
+      "name": "discord_rpc",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/Aidan63/linc_discord-rpc"
     },
     {
       "name": "linc_luajit",
       "type": "git",
       "dir": null,
       "ref": "master",
-      "url": "https://github.com/superpowers04/linc_luajit.git"
+      "url": "https://github.com/superpowers04/linc_luajit"
     },
     {
-      "name": "flxanimate",
+      "name": "hxvm-luajit",
       "type": "git",
       "dir": null,
-      "ref": "dev",
-      "url": "https://github.com/ShadowMario/flxanimate.git"
+      "ref": "master",
+      "url": "https://github.com/nebulazorua/hxvm-luajit"
     },
     {
-      "name": "extension-androidtools",
+      "name": "faxe",
       "type": "git",
       "dir": null,
-      "ref": "main",
-      "url": "https://github.com/MAJigsaw77/extension-androidtools.git"
+      "ref": "master",
+      "url": "https://github.com/ashea-code/faxe"
+    },
+    {
+      "name": "linc_luajit",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/superpowers04/linc_luajit"
     }
   ]
 }
