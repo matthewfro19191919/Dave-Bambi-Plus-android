@@ -118,38 +118,23 @@ class Character extends FlxSprite
 
 				flipX = false;
 			case 'bf-3d':
-				frames = Paths.getSparrowAtlas('3D/BOYFRIEND', 'shared');
-				
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				frames = Paths.getSparrowAtlas('characters/3d_bf', 'shared');
 
-				animation.addByPrefix('firstDeath', "BF dies", 24, false);
-				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-				animation.addByPrefix('dodge', "boyfriend dodge", 24, false);
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
-				animation.addByPrefix('hit', 'BF hit', 24, false);
-
+				animation.addByPrefix('idle', 'idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', anim, 24, false);	
+				}
 				loadOffsetFile(curCharacter);
-
-				skins.set('gfSkin', 'gf-3d');
-				skins.set('3d', 'bf-3d');
-
+				
+				globalOffset = [-85, -272];
 				barColor = FlxColor.fromRGB(49, 176, 209);
 
 				playAnim('idle');
-
+				antialiasing = false;
 				nativelyPlayable = true;
-
 				flipX = true;
+
 			case 'bf-cool':
 				frames = Paths.getSparrowAtlas('characters/Cool_BF', 'shared');
 				
@@ -2718,6 +2703,25 @@ class Character extends FlxSprite
 				antialiasing = false;
 				nativelyPlayable = true;
 				flipX = false;
+
+				playAnim('idle');
+
+			case 'car':
+				frames = Paths.getSparrowAtlas('garn47/CAR', 'shared');
+				animation.addByPrefix('idle', 'car-idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', 'car-$anim', 24, false);
+				}
+				animation.addByIndices('hey', 'hahihi', [11, 12, 13, 14, 15, 16, 17], "", 24, false);
+				
+				barColor = FlxColor.fromRGB(37, 191, 55);
+
+				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+				
+				globalOffset = [0, 270];
+
+				nativelyPlayable = true;
 
 				playAnim('idle');
 

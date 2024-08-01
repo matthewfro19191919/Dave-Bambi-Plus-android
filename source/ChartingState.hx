@@ -108,6 +108,15 @@ class ChartingState extends MusicBeatState
 
 	var shagVoice:Bool;
 	var kogVoice:Bool;
+	var tailVoice:Bool;
+	var conVoice:Bool;
+	var chipVoice:Bool;
+	var expVoice:Bool;
+	var stiVoice:Bool;
+	var eevVoice:Bool;
+	var xoVoice:Bool;
+	var shiVoice:Bool;
+	var carVoice:Bool;
 
 	override function create()
 	{
@@ -144,6 +153,15 @@ class ChartingState extends MusicBeatState
 
 		shagVoice = PlayState.shaggyVoice;
 		kogVoice = PlayState.kogreVoice;
+	    tailVoice = PlayState.tailsVoice;
+	    conVoice = PlayState.connerVoice;
+	    chipVoice = PlayState.chipflakeVoice;
+	    expVoice = PlayState.expungedVoice;
+	    stiVoice = PlayState.stickybmVoice;
+	    eevVoice = PlayState.eeveeVoice;
+	    xoVoice = PlayState.xoVoice;
+	    shiVoice = PlayState.shinxVoice;
+	    carVoice = PlayState.carVoice;
 
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 8, GRID_SIZE * 16);
 		add(gridBG);
@@ -522,6 +540,18 @@ class ChartingState extends MusicBeatState
 		// WONT WORK FOR TUTORIAL OR TEST SONG!!! REDO LATER
 		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, shagVoice ? "Shaggy" : ""));
 		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, kogVoice ? "Kogre" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, tailVoice ? "Tails" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, conVoice ? "Conner" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, chipVoice ? "ChipFlake" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, stiVoice ? "StickyBM" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, eevVoice ? "Eevee" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, xoVoice ? "XO" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, shiVoice ? "Shinx" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, carVoice ? "Car" : ""));
+		
+		// Expunged voice but because it's for the recursed song it goes unused here but I don't really for sure if it goes unused.
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, expVoice ? "Expunged" : ""));
+
 		FlxG.sound.list.add(vocals);
 
 		FlxG.sound.music.pause();
