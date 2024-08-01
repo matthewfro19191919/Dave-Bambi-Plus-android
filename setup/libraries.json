@@ -79,13 +79,6 @@
       "dir": null,
       "ref": "master",
       "url": "https://github.com/ashea-code/faxe"
-    },
-    {
-      "name": "linc_luajit",
-      "type": "git",
-      "dir": null,
-      "ref": "master",
-      "url": "https://github.com/superpowers04/linc_luajit"
     }
   ]
 }
