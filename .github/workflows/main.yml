@@ -1,7 +1,6 @@
-
 # THE FOLLOWING ACTIONS CODE IS FROM THE PSYCH ENGINE REPO: https://github.com/ShadowMario/FNF-PsychEngine/blob/main/.github/workflows/main.yml
 
-name: windows
+name: Build
 
 # Controls when the action will run.
 on:
@@ -36,16 +35,16 @@ jobs:
           haxelib install openfl 9.3.3
           haxelib install flixel 4.11.0
           haxelib run lime setup flixel
-          haxelib run lime setup
+          haxelib run lime setup         
           haxelib remove flixel-addons
-          haxelib remove flixel-tools        
+          haxelib remove flixel-tools
           haxelib remove flixel-ui
-          haxelib install flixel-addons 2.9.0
           haxelib install flixel-tools
           haxelib install flixel-ui
+          haxelib install flixel-addons 2.9.0
           haxelib install tjson
           haxelib install hxjsonast
-          haxelib install hxCodec 2.5.1
+          haxelib install hxCodec 2.5.1          
           haxelib install linc_luajit
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
@@ -61,10 +60,5 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
+          name: ReleaseBuild
           path: export/release/windows/bin
-      - name: Dowload Artifact
-        uses: actions/download-artifact@v4
-        with:
-         path: export/release/windows/bin
-      - name: Display structure of downloaded files
-        run: ls -R export/release/windows/bin
