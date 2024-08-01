@@ -84,7 +84,6 @@
       "name": "actuate",
       "type": "haxelib",
       "version": null
-    },
-    {
+    }
   ]
 }
