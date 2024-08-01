@@ -248,6 +248,9 @@ class CharacterSelectState extends MusicBeatState
 		new CharacterInSelect('hamu', [1, 1, 1, 1], [		
 			new CharacterForm('hamu', 'Hamu', [1,1,1,1]),
 		]),
+		new CharacterInSelect('car', [1, 1, 1, 1], [
+			new CharacterForm('car', 'Car (Garn47)', [1,1,1,1]),
+		]),
 		new CharacterInSelect('shaggy', [1, 1, 1, 1], [
 			new CharacterForm('shaggy', 'Shaggy', [1, 1, 1, 1]),
 			new CharacterForm('supershaggy', 'Shaggy (0.001%)', [1, 1, 1, 1]),
@@ -283,6 +286,7 @@ class CharacterSelectState extends MusicBeatState
 		unlockCharacter('shinx');
 		unlockCharacter('question');
 		unlockCharacter('question-playable');
+		unlockCharacter('car');
 		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
 		{
 			if (FlxG.fullscreen)
