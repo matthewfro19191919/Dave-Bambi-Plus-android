@@ -40,7 +40,7 @@ jobs:
           haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp --quiet
           haxelib install lime 8.0.0
           haxelib install openfl 9.2.0
-          haxelib install flixel 5.3.0
+          haxelib install flixel 4.11.0
           haxelib install flixel-tools 1.5.1 --quiet
           haxelib install flixel-ui 2.5.0 --quiet
           haxelib install flixel-addons 2.11.0
@@ -119,7 +119,7 @@ jobs:
           haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp --quiet
           haxelib install lime 8.0.0
           haxelib install openfl 9.2.0
-          haxelib install flixel 5.3.0
+          haxelib install flixel 4.11.0
           haxelib install flixel-tools 1.5.1 --quiet
           haxelib install flixel-ui 2.5.0 --quiet
           haxelib install flixel-addons 2.11.0
