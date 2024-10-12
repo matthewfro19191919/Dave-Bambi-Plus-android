@@ -2724,6 +2724,49 @@ class Character extends FlxSprite
 				nativelyPlayable = true;
 
 				playAnim('idle');
+			case 'pink-expunged':
+				// EXPUNGED SHITE ANIMATION LOADING CODE
+				frames = Paths.getSparrowAtlas('expunged/pink/Pink_Expunged_Normal', 'shared');
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up0', 24, false);
+				animation.addByPrefix('singRIGHT', 'right0', 24, false);
+				animation.addByPrefix('singDOWN', 'down0', 24, false);
+				animation.addByPrefix('singLEFT', 'left0', 24, false);
+		
+				loadOffsetFile(curCharacter);
+				
+
+				barColor = FlxColor.fromRGB(115, 0, 115);
+				antialiasing = false;
+				
+				globalOffset = [0, -350];
+				
+				setGraphicSize(Std.int((width * 0.8) / furiosityScale));
+				updateHitbox();
+				
+				playAnim('idle');
+
+			case 'pink-expunged-mad':
+				// EXPUNGED SHITE ANIMATION LOADING CODE
+				frames = Paths.getSparrowAtlas('expunged/pink/Pink_Expunged_Mad', 'shared');
+				animation.addByPrefix('idle', 'idle0', 24, false);
+				animation.addByPrefix('singUP', 'up0', 24, false);
+				animation.addByPrefix('singRIGHT', 'right0', 24, false);
+				animation.addByPrefix('singDOWN', 'down0', 24, false);
+				animation.addByPrefix('singLEFT', 'left0', 24, false);
+		
+				loadOffsetFile(curCharacter);
+				
+
+				barColor = FlxColor.fromRGB(115, 0, 115);
+				antialiasing = false;
+				
+				globalOffset = [0, -350];
+				
+				setGraphicSize(Std.int((width * 0.8) / furiosityScale));
+				updateHitbox();
+				
+				playAnim('idle');
 
 		}
 		dance();
