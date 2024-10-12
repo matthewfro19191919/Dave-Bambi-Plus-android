@@ -1,6 +1,6 @@
 package;
 
-import flixel.sound.FlxSound;
+import flixel.system.FlxSound;
 import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
 import flixel.FlxSprite;

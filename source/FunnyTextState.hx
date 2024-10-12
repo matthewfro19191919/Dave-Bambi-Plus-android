@@ -8,7 +8,7 @@ import flixel.*;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flash.system.System;
-import flixel.sound.FlxSound;
+import flixel.system.FlxSound;
 
 
 class RecurserFunnyBGText extends FlxText
