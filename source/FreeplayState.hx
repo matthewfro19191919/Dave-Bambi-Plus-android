@@ -1,6 +1,6 @@
 package;
 
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import Controls.Device;
 import Controls.Control;
 import flixel.math.FlxRandom;
