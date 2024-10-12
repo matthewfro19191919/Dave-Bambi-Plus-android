@@ -829,6 +829,8 @@ class PlayState extends MusicBeatState
 					stageCheck = 'omission';
 				case 'corrupted-farmer':
 					stageCheck = 'corrupted-farm';
+				case 'supportation':
+					stageCheck = 'pink-desktop';
 			}
 		}
 		else
