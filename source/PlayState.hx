@@ -9218,7 +9218,7 @@ class PlayState extends MusicBeatState
 						case 99:
 							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub7'), 0.02, 0.3);
 						case 256:
-							switchDad('pink-expunged-mad', dad.getPosition());, 0.3);
+							switchDad('pink-expunged-mad', dad.getPosition();, 0.3);
 						case 1163:
 							switchDad('pink-expunged', dad.getPosition());
 						case 1164:
@@ -9243,7 +9243,6 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(dad, {alpha: 0}, 4);
 							defaultCamZoom = FlxG.camera.zoom + 0.3;
 							FlxTween.tween(FlxG.camera, {zoom: FlxG.camera.zoom + 0.3}, 4);
-	
 					}
 				case 'shredder':
 					switch (curStep)
