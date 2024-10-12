@@ -2553,6 +2553,19 @@ class PlayState extends MusicBeatState
 				sprites.add(expungedBG);
 				add(expungedBG);
 				voidShader(expungedBG);
+			case 'desktop-pink':
+				bgZoom = 0.5;
+				stageName = 'desktop';
+
+				expungedBG = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
+				expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/pink/creepyRoom', 'shared'));
+				expungedBG.setPosition(0, 200);
+				expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
+				expungedBG.scrollFactor.set();
+				expungedBG.antialiasing = false;
+				sprites.add(expungedBG);
+				add(expungedBG);
+				voidShader(expungedBG);
 			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell" | 'cosbihell':
 				bgZoom = 0.7;
 
