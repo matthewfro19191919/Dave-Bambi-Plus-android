@@ -9181,6 +9181,70 @@ class PlayState extends MusicBeatState
 						case 2083:
 							PlatformUtil.sendWindowsNotification("Anticheat.dll", "Threat expunged.dat successfully contained.");
 					}
+				case 'supportation':
+					switch(curStep)
+					{
+						case 12, 18, 23:
+							blackScreen.alpha = 1;
+							FlxTween.tween(blackScreen, {alpha: 0}, Conductor.crochet / 1000);
+							FlxG.sound.play(Paths.sound('static'), 0.5);
+	
+							creditsPopup.switchHeading({path: 'songHeadings/glitchHeading', antiAliasing: false, animation: 
+							new Animation('glitch', 'glitchHeading', 24, true, [false, false]), iconOffset: 0});
+							
+							creditsPopup.changeText('', 'none', false);
+						case 20:
+							creditsPopup.switchHeading({path: 'songHeadings/expungedHeading', antiAliasing: true,
+							animation: new Animation('expunged', 'Expunged', 24, true, [false, false]), iconOffset: 0});
+	
+							creditsPopup.changeText('Song by Oxygen', 'Oxygen');
+						case 14, 24:
+							creditsPopup.switchHeading({path: 'songHeadings/expungedHeading', antiAliasing: true,
+							animation: new Animation('expunged', 'Expunged', 24, true, [false, false]), iconOffset: 0});
+	
+							creditsPopup.changeText('Song by EXPUNGED', 'whoAreYou');
+						case 6:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub1'), 0.02, 0.3);
+						case 17:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub2'), 0.02, 0.3);
+						case 31:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub3'), 0.02, 0.3);
+						case 54:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub4'), 0.02, 0.3);
+						case 72:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub5'), 0.02, 0.3);
+						case 87:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub6'), 0.02, 0.3);
+						case 99:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub7'), 0.02, 0.3);
+						case 256:
+							switchDad('pink-expunged-mad', dad.getPosition());, 0.3);
+						case 1163:
+							switchDad('pink-expunged', dad.getPosition());
+						case 1164:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub8'), 0.02, 0.3);
+						case 1176:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub9'), 0.02, 0.3);
+						case 1189:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub10'), 0.02, 0.3);
+						case 1202:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub11'), 0.02, 0.3);
+						case 1216:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub12'), 0.02, 0.3);
+						case 1232:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub13'), 0.02, 0.3);
+						case 1259:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub14'), 0.02, 0.3);
+						case 1273:
+							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub15'), 0.02, 0.3);
+						case 1282:
+							FlxTween.tween(boyfriend, {alpha: 0}, 4);
+							FlxTween.tween(gf, {alpha: 0}, 4);
+							FlxTween.tween(dad, {alpha: 0}, 4);
+							defaultCamZoom = FlxG.camera.zoom + 0.3;
+							FlxTween.tween(FlxG.camera, {zoom: FlxG.camera.zoom + 0.3}, 4);
+	
+					}
 				case 'shredder':
 					switch (curStep)
 					{
