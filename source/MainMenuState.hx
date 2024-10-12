@@ -30,7 +30,7 @@ import flixel.util.FlxGradient;
 import Discord.DiscordClient;
 #end
 
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 
 using StringTools;
 
