@@ -9148,7 +9148,7 @@ class PlayState extends MusicBeatState
 							}
 	
 						case 1282:
-                                                        switchDad('expunged-mad', false);
+                                                        switchDad('expunged-mad', true);
 							expungedBG.loadGraphic(Paths.image('backgrounds/void/exploit/broken_expunged_chain', 'shared'));
 							expungedBG.setGraphicSize(Std.int(expungedBG.width * 2));
 						case 1311:
@@ -9233,9 +9233,9 @@ class PlayState extends MusicBeatState
 						case 99:
 							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub7'), 0.02, 0.3);
 						case 256:
-							switchDad('pink-expunged-mad', 0.3);
+							switchDad('pink-expunged-mad', true);
 						case 1163:
-							switchDad('pink-expunged', 0.3);
+							switchDad('pink-expunged', true);
 						case 1164:
 							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub8'), 0.02, 0.3);
 						case 1176:
