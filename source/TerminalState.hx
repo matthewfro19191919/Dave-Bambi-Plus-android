@@ -14,7 +14,7 @@ import flixel.FlxState;
 import flixel.*;
 import flixel.util.FlxTimer;
 import flash.system.System;
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 
 using StringTools;
 
