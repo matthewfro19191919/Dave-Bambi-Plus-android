@@ -8,7 +8,7 @@ import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
-import flixel.system.FlxSound;
+import flixel.sound.FlxSound;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 
