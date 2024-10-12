@@ -9235,7 +9235,7 @@ class PlayState extends MusicBeatState
 						case 256:
 							switchDad('pink-expunged-mad', dad.getPosition();, 0.3);
 						case 1163:
-							switchDad('pink-expunged', dad.getPosition());
+							switchDad('pink-expunged', dad.getPosition();, 0.3);
 						case 1164:
 							subtitleManager.addSubtitle(LanguageManager.getTextString('supportation_sub8'), 0.02, 0.3);
 						case 1176:
