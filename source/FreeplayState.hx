@@ -1,6 +1,6 @@
 package;
 
-import flixel.sound.FlxSound;
+import flixel.system.FlxSound;
 import Controls.Device;
 import Controls.Control;
 import flixel.math.FlxRandom;
@@ -424,6 +424,7 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Unfairness'], 15, ['bambi-unfair']);
 				if (FlxG.save.data.exploitationFound)
 					addWeek(['Exploitation'], 16, ['expunged']);
+					addWeek(['supportation'], 16, ['pink-expunged']);
 				if (FlxG.save.data.cheatingFound)
 					addWeek(['Bad-Apple-srPerez'], 14, ['flandre']);
 
