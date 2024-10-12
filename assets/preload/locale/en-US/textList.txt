@@ -450,6 +450,23 @@ wacky_sub5==OPEN THE
 wacky_sub6==GATE YOU
 wacky_sub7==FUCK!!!
 
+// supportation Subtitles //
+supportation_sub1==Whats up guys
+supportation_sub2==Hi its me.
+supportation_sub3==Pink Expunged
+supportation_sub4==Now face my pink wrath
+supportation_sub5==*Laugher*
+supportation_sub6==You little BITCH!
+supportation_sub7==*Even more laugher*
+supportation_sub8==Okay so...
+supportation_sub9==Ive come to the conclusion.
+supportation_sub10==That you are actually good at singing
+supportation_sub11==So as a reward
+supportation_sub12==I will not kill you
+supportation_sub13==So I hope you have a friday funkin afternoon!
+supportation_sub14==Okay...
+supportation_sub15==Now bye bye!
+
 3d_gameOver_polygonized==You've been Polygonized!
 3d_gameOver_restart==Restart?
 
