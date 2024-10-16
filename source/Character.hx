@@ -2740,10 +2740,9 @@ class Character extends FlxSprite
 				antialiasing = false;
 				
 				globalOffset = [0, -350];
-				
-				setGraphicSize(Std.int((width * 0.8) / furiosityScale));
+
 				updateHitbox();
-				
+
 				playAnim('idle');
 
 			case 'pink-expunged-mad':
@@ -2762,10 +2761,21 @@ class Character extends FlxSprite
 				antialiasing = false;
 				
 				globalOffset = [0, -350];
-				
-				setGraphicSize(Std.int((width * 0.8) / furiosityScale));
+
 				updateHitbox();
 				
+				playAnim('idle');
+			case 'bandu':
+				frames = Paths.getSparrowAtlas('septuagint/bandu', 'shared');
+				animation.addByPrefix('idle', 'phones fall0017', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', 'sad $anim', 24, false);
+				}
+				barColor = FlxColor.fromRGB(0, 24, 2);
+
+				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+
 				playAnim('idle');
 
 		}
