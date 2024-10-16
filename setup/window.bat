@@ -23,6 +23,4 @@ haxelib git faxe https://github.com/uhrobots/faxe
 haxelib git polymod https://github.com/larsiusprime/polymod.git
 haxelib install hxcpp-debug-server
 echo Finished!
-building game
-haxelib run lime build windows
 pause
