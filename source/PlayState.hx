@@ -831,6 +831,8 @@ class PlayState extends MusicBeatState
 					stageCheck = 'corrupted-farm';
 				case 'supportation':
 					stageCheck = 'pink-desktop';
+				case 'septuagint':
+					stageCheck = 'septuagint';
 			}
 		}
 		else
@@ -2568,7 +2570,7 @@ class PlayState extends MusicBeatState
 				sprites.add(expungedBG);
 				add(expungedBG);
 				voidShader(expungedBG);
-			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell" | 'cosbihell':
+			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell" | 'cosbihell' | 'septuagint':
 				bgZoom = 0.7;
 
 				var bg:BGSprite = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
@@ -2604,6 +2606,11 @@ class PlayState extends MusicBeatState
 						bg.loadGraphic(Paths.image('backgrounds/void/crible'));
 						bg.setPosition(-1800, -550);
 						bg.setGraphicSize(Std.int(bg.width * 3));
+					case 'septuagint':
+						bgZoom = 0.9;
+					        bg.setPosition(-600, -300);
+						bg.loadGraphic(Paths.image('backgrounds/void/septuagint/septuagint', 'shared'));
+						stageName = 'septuagint';
 				}
 				sprites.add(bg);
 				add(bg);
