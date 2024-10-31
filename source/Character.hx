@@ -2777,6 +2777,26 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
 
 				playAnim('idle');
+			case 'nyako':
+				frames = Paths.getSparrowAtlas('nyanyo/characters/nyanyo', 'shared');
+
+				animation.addByPrefix('idle', 'idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', anim, 24, false);	
+				}
+				animation.addByPrefix('hey', 'nya', 24, false);
+				
+				loadOffsetFile(curCharacter);
+				
+				globalOffset = [0, -30];
+				barColor = FlxColor.fromRGB(153, 102, 204);
+
+				playAnim('idle');
+				antialiasing = false;
+				nativelyPlayable = true;
+				flipX = false;
+
 
 		}
 		dance();
