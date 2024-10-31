@@ -10,7 +10,7 @@ haxelib install openfl 9.2.0
 haxelib install flixel 4.11.0 
 haxelib install flixel-tools 1.5.1 --quiet
 haxelib install flixel-ui 2.5.0 --quiet
-haxelib install flixel-addons 3.1.1 --quiet
+haxelib install flixel-addons 2.9.0 --quiet
 haxelib install tjson
 haxelib install hxjsonast
 haxelib install hxCodec 2.5.1
