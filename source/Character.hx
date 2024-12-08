@@ -2797,6 +2797,59 @@ class Character extends FlxSprite
 				nativelyPlayable = true;
 				flipX = false;
 
+				case 'schlingi':
+					frames = Paths.getSparrowAtlas('porkrind/charcaters/schlingi', 'shared');
+					animation.addByPrefix('idle', 'idle', 24, false);
+					for (anim in ['left', 'down', 'up', 'right'])
+					{
+						animation.addByPrefix('sing${anim.toUpperCase()}', '${anim}0', 24, false);
+						animation.addByPrefix('sing${anim.toUpperCase()}-alt', 'alt$anim', 24, false);
+					}
+					animation.addByPrefix('death', 'death', 24, false);
+
+					globalOffset = [0, 310];
+	
+					loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+	
+					barColor = FlxColor.fromRGB(252, 251, 53);
+	
+					playAnim('idle');
+
+				case 'bluegonal':
+					frames = Paths.getSparrowAtlas('porkrind/charcaters/bluegonal', 'shared');
+					animation.addByPrefix('idle', 'IDLE', 24, false);
+					for (anim in ['LEFT', 'DOWN', 'UP', 'RIGHT'])
+					{
+						animation.addByPrefix('sing${anim.toUpperCase()}', '${anim}0', 24, false);
+					}
+					animation.addByPrefix('death', 'death', 24, false);
+
+					globalOffset = [-100, 100];
+	
+					loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+	
+					barColor = FlxColor.fromRGB(81, 87, 222);
+	
+					playAnim('idle');
+				case 'redman':
+					frames = Paths.getSparrowAtlas('porkrind/charcaters/redman', 'shared');
+					animation.addByPrefix('idle', 'idle', 24, false);
+					for (anim in ['left', 'down', 'up', 'right'])
+					{
+						animation.addByPrefix('sing${anim.toUpperCase()}', '${anim}0', 24, false);
+					}
+					animation.addByPrefix('death', 'death', 24, false);
+
+					globalOffset = [150, -550];
+
+					setGraphicSize(Std.int((width * 2) / furiosityScale));
+
+					loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+	
+					barColor = FlxColor.fromRGB(162, 25, 23);
+	
+					playAnim('idle');
+
 
 		}
 		dance();
