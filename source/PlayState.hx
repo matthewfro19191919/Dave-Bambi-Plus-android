@@ -511,6 +511,10 @@ class PlayState extends MusicBeatState
 	var shx:Float;
 	var shy:Float;
 	var sh_r:Float = 60;
+        
+	var 3dbg:BGSprite;
+	var 3dbg2:BGSprite;
+	var 3dbg3:BGSprite;
 
 	override public function create()
 	{
@@ -2901,7 +2905,6 @@ class PlayState extends MusicBeatState
 	    		// slave_bg.setGraphicSize(Std.int(slave_bg.width * 1);
     			// slave_bg.updateHitbox();
 	    		slave_bg.antialiasing = true;
-		    	slave_bg.active = false;
 		    	add(slave_bg);
 			}
 			if (SONG.song.toLowerCase() == "freedom")
@@ -2915,7 +2918,6 @@ class PlayState extends MusicBeatState
 	    		// slave_bg_Fire.setGraphicSize(Std.int(slave_bg_Fire.width * 1);
     			// slave_bg_Fire.updateHitbox();
 	    		slave_bg_Fire.antialiasing = true;
-		    	slave_bg_Fire.active = false;
 		    	add(slave_bg_Fire);
 			}
 		    case 'white':
@@ -2925,7 +2927,7 @@ class PlayState extends MusicBeatState
 				blackScreen.cameras = [camGame];
 				blackScreen.screenCenter();
 				blackScreen.scrollFactor.set();
-				blackScreen.alpha = 0;
+				blackScreen.alpha = 1;
 				add(blackScreen);
 		    case 'superpave':
 	     		defaultCamZoom = 0.9;
@@ -2934,7 +2936,6 @@ class PlayState extends MusicBeatState
 	    		// paul.setGraphicSize(Std.int(bg.width * 1);
     			// paul.updateHitbox();
 	    		paul.antialiasing = true;
-		    	paul.active = false;
 		    	add(paul);
 
 	    		var ploor:BGSprite = new BGSprite('ploor', -796.6, 604.3, ('backgrounds/the_new_dave_mod/ploor'), null, 0.95, 0.95);
@@ -2942,9 +2943,37 @@ class PlayState extends MusicBeatState
 	    		// ploor.setGraphicSize(Std.int(bg.width * 1);
     			// ploor.updateHitbox();
 	    		ploor.antialiasing = true;
-		    	ploor.active = false;
 		    	add(ploor);
 
+			case 'daWorld':
+				bgZoom = 0.5;
+				stageName = 'daWorld';
+
+				3dbg = new BGSprite('void', -1500, -800, 'backgrounds/porkrind/yello', null, 1, 1, false, true);
+				3dbg.setGraphicSize(Std.int(3dbg.width * 3.5));
+				3dbg.scrollFactor.set();
+				3dbg.antialiasing = false;
+				sprites.add(3dbg);
+				add(3dbg);
+				voidShader(3dbg);
+						
+				3dbg2 = new BGSprite('void', -1500, -800, 'backgrounds/porkrind/blo', null, 1, 1, false, true);
+				3dbg2.active = false;
+				3dbg2.setGraphicSize(Std.int(3dbg2.width * 3.5));
+				3dbg2.scrollFactor.set();
+				3dbg2.antialiasing = false;
+				sprites.add(3dbg2);
+				add(3dbg2);
+				voidShader(3dbg2);
+
+				3dbg3 = new BGSprite('void', -1500, -800, 'backgrounds/porkrind/evil', null, 1, 1, false, true);				3dbg2.active = false;
+				3dbg3.active = false;
+				3dbg3.setGraphicSize(Std.int(3dbg3.width * 3.5));
+				3dbg3.scrollFactor.set();
+				3dbg3.antialiasing = false;
+				sprites.add(3dbg3);
+				add(3dbg3);
+				voidShader(3dbg3);
 			default:
 				bgZoom = 0.9;
 				stageName = 'stage';
@@ -8179,7 +8208,35 @@ class PlayState extends MusicBeatState
 				resyncVocals();
 	
 			switch (SONG.song.toLowerCase())
-			{
+			{	case 'porkrind':
+					switch (curBaet)
+					{
+						case 128:
+					            switchDad('bluegonal', dad.getPosition(), false);
+					            3dbg.active = false;
+					            3dbg2.active = true	
+						    3dbg3.active = false;
+					        case 720:
+					            black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+					            black.screenCenter();
+					            black.alpha = 1;
+					            add(black);
+						    FlxTween.tween(black, 1, 10, {ease: FlxEase.backOut});
+					        case 970:
+			                            switchDad('redman', dad.getPosition(), false);
+		                        	    FlxTween.tween(black, 1, 10, {ease: FlxEase.backIn});
+					            black.alpha = 0;
+			                            3dbg.active = false;
+			                            3dbg2.active = false;
+					            3dbg3.active = true;
+					        case 1072:
+					            black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+					            black.screenCenter();
+					            black.alpha = 1;
+					            add(black);
+						    FlxTween.tween(black, 1, 10, {ease: FlxEase.backOut});
+			
+		                	}
 				case 'blocked':
 					switch (curStep)
 					{
