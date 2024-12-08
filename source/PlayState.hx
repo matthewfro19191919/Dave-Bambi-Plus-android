@@ -8214,7 +8214,7 @@ class PlayState extends MusicBeatState
 						case 128:
 					            switchDad('bluegonal', dad.getPosition(), false);
 					            threedbg.active = false;
-					            threedbg2.active = true	
+					            threedbg2.active = true;
 						    threedbg3.active = false;
 					        case 720:
 					            black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
