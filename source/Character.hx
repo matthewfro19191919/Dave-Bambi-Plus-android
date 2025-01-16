@@ -934,6 +934,21 @@ class Character extends FlxSprite
 				skins.set('recursed', 'bambi-recursed');
 
 				playAnim('idle');
+			case 'hortasSCP':
+				frames = Paths.getSparrowAtlas('scp/hortasSCP', 'shared');
+				animation.addByPrefix('idle', 'idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim', 24, false);
+				}
+				barColor = FlxColor.fromRGB(37, 191, 55);
+
+				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+				
+				globalOffset = [37, 90];
+				skins.set('recursed', 'bambi-recursed');
+
+				playAnim('idle');
 			case 'doge':
 				frames = Paths.getSparrowAtlas('doge/doge', 'shared');
 				animation.addByPrefix('idle', 'Doge0', 24, false);
