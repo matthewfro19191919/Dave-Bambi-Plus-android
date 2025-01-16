@@ -6735,6 +6735,11 @@ class PlayState extends MusicBeatState
 			case '3D' | 'shape':
 			  	assetPath = '3D/';
 		}
+		switch (SONG.song.toLowerCase())
+		{
+			case 'hortas-1' | 'hortas-2':
+			  	assetPath = 'scp/';
+		}
 		var placement:String = Std.string(daCombo);
 
 		var coolText:FlxText = new FlxText(daX, daY, 0, placement, 32);
