@@ -105,6 +105,8 @@ class FreeplayState extends MusicBeatState
 
 	public static var noExtraKeys:Array<String> = 
 	[
+		'hortas-1',
+		'hortas-2',
 		'five-nights',
 		'vs-dave-rap',
 		'vs-dave-rap-two',
@@ -140,7 +142,7 @@ class FreeplayState extends MusicBeatState
 		'vs-dave-thanksgiving',
 		'bonkers',
 		'duper',
-        'omission',
+                'omission',
 		'doge-vs-bambi',
 		'interdimensional-zorua',
 		'corrupted-farmer',
@@ -219,7 +221,7 @@ class FreeplayState extends MusicBeatState
 		}
 		if (FlxG.save.data.terminalFound && !awaitingExploitation)
 		{
-			Catagories = ['dave', 'joke', 'extras', 'dave2.5', 'classic', 'cover', 'fanmade', 'terminal', 'pibby', 'cosbi', 'the_new_dave_mod'];
+			Catagories = ['dave', 'joke', 'extras', 'dave2.5', 'classic', 'cover', 'fanmade', 'terminal', 'pibby', 'cosbi', 'SCP', 'the_new_dave_mod'];
 			translatedCatagory = [
 				LanguageManager.getTextString('freeplay_dave'),
 				LanguageManager.getTextString('freeplay_joke'),
@@ -231,6 +233,7 @@ class FreeplayState extends MusicBeatState
 				LanguageManager.getTextString('freeplay_terminal'),
 				LanguageManager.getTextString('freeplay_pibby'),
 				LanguageManager.getTextString('freeplay_cosbi'),
+				LanguageManager.getTextString('freeplay_SCP'),
 				LanguageManager.getTextString('freeplay_the_new_dave_mod')];
 		}
 
@@ -382,7 +385,7 @@ class FreeplayState extends MusicBeatState
 			case 'extras':
 				if (FlxG.save.data.recursedUnlocked)
 					addWeek(['Recursed'], 10, ['recurser']);
-			    addWeek(['Bonus-Song'], 1, ['dave']);
+			        addWeek(['Bonus-Song'], 1, ['dave']);
 				addWeek(['Bot-Trot'], 9, ['playrobot']);
 				addWeek(['Escape-From-California'], 11, ['moldy']);
 				addWeek(['Five-Nights'], 12, ['dave']);
@@ -433,6 +436,8 @@ class FreeplayState extends MusicBeatState
 				addWeek(['Corrupted-Farmer'], 2, ['bambi2']);
 			case 'cosbi':
 				addWeek(['melophobia'], 25, ['cosbi']);
+			case 'SCP':
+				addWeek(['hortas-1', 'hortas-2'], 21, ['hortasSCP', 'hortasSCP']);
 			case 'the_new_dave_mod':
 				addWeek(['cha-cha-slide', 'super-pave', 'slavery', 'freedom'], 26, ['cha', 'superpave', 'slave', 'slave']);
 		}
