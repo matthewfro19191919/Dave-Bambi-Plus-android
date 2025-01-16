@@ -8219,7 +8219,7 @@ class PlayState extends MusicBeatState
 	
 			switch (SONG.song.toLowerCase())
 			{	case 'porkrind':
-					switch (curBaet)
+					switch (curBeat)
 					{
 						case 128:
 					            switchDad('bluegonal', dad.getPosition(), false);
