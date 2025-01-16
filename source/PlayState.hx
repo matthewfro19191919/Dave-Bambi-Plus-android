@@ -2574,7 +2574,7 @@ class PlayState extends MusicBeatState
 				sprites.add(expungedBG);
 				add(expungedBG);
 				voidShader(expungedBG);
-			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell" | 'cosbihell' | 'septuagint':
+			case 'red-void' | 'green-void' | 'glitchy-void' | 'omission' | "banana-hell" | 'cosbihell' | 'septuagint' | 'scpHortas':
 				bgZoom = 0.7;
 
 				var bg:BGSprite = new BGSprite('void', -600, -200, '', null, 1, 1, false, true);
@@ -2614,6 +2614,11 @@ class PlayState extends MusicBeatState
 						bgZoom = 0.9;
 					        bg.setPosition(-600, -300);
 						bg.loadGraphic(Paths.image('backgrounds/void/septuagint/septuagint', 'shared'));
+						stageName = 'septuagint';
+					case 'scpHortas':
+						bgZoom = 0.9;
+					        bg.setPosition(0, 0);
+						bg.loadGraphic(Paths.image('backgrounds/void/scp/scphortasbg', 'shared'));
 						stageName = 'septuagint';
 				}
 				sprites.add(bg);
