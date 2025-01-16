@@ -53,6 +53,7 @@ class StoryMenuState extends MusicBeatState
 		new Week(['Shredder', 'Greetings', 'Interdimensional', 'Rano'], LanguageManager.getTextString('story_festivalWeek'), 0xFF800080, 'festival'), // FESTEVAL
 		new Week(['Supernovae', 'Glitch', 'Master'], LanguageManager.getTextString('story_masterWeek'), 0xFF116E1C, 'masterweek'), // MASTERA BAMBI
 		new Week(['Corrupted-Farmer'], LanguageManager.getTextString('story_pibbybambiWeek'), 0xFF00B515, 'lol'), // PIBBY BAMBI
+		new Week(['hortas-1', 'hortas-2'], LanguageManager.getTextString('story_hortasSCp'), 0xFF000000, 'evilhortas'), // EVIL HORTAS
 	];
 
 	var awaitingExploitation:Bool;
