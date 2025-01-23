@@ -518,6 +518,12 @@ class PlayState extends MusicBeatState
 	
         var stageName:String = '';
 
+	var font:String = Paths.font("comic.ttf");
+	var fontScaler:Int = 1;
+	
+	var screenwidth = Application.current.window.display.bounds.width;
+	var screenheight = Application.current.window.display.bounds.height;
+	
 	override public function create()
 	{
 		if (FlxG.save.data.moreMaxHP)
@@ -1369,9 +1375,6 @@ class PlayState extends MusicBeatState
 			shx = boyfriend.x;
 			shy = boyfriend.y;
 		}
-
-		var font:String = Paths.font("comic.ttf");
-		var fontScaler:Int = 1;
 	
 		switch (SONG.song.toLowerCase())
 		{
@@ -6096,9 +6099,6 @@ class PlayState extends MusicBeatState
 			{
 				elapsedexpungedtime += elapsed * 9;
 
-				var screenwidth = Application.current.window.display.bounds.width;
-				var screenheight = Application.current.window.display.bounds.height;
-
 				var toy = ((-Math.sin((elapsedexpungedtime / 9.5) * 2) * 30 * 5.1) / 1080) * screenheight;
 				var tox = ((-Math.cos((elapsedexpungedtime / 9.5)) * 100) / 1980) * screenwidth;
 
@@ -8348,8 +8348,8 @@ class PlayState extends MusicBeatState
 		                        	    add(STAGE_candyland);
 		                        	    
 		                        	    var cockfire:BGSprite = new BGSprite('cockfire', 0, 0, Paths.image('backgrounds/crikey/void/void_Lighting'), null);
-		                        	    cockfire.scale.x = screenWidth;
-		                        	    cockfire.scale.y = screenHeight;
+		                        	    cockfire.scale.x = 1280;
+		                                    cockfire.scale.y = 720;
 		                        	    add(cockfire);
                                                      
 		                        	    var truck:BGSprite;
@@ -8759,15 +8759,6 @@ class PlayState extends MusicBeatState
 							switchDad('dave-festival', dad.getPosition(), false);
 	
 							regenerateStaticArrows(0);
-							
-							var color = getBackgroundColor();
-	
-							FlxTween.color(dad, 0.6, dad.color, color);
-							if (formoverride != 'tristan-golden-glowing')
-							{
-								FlxTween.color(boyfriend, 0.6, boyfriend.color, color);
-							}
-							FlxTween.color(gf, 0.6, gf.color, color);
 	
 							FlxTween.linearMotion(dad, dad.x, dad.y, 100 + dad.globalOffset[0], 450 + dad.globalOffset[1], 0.6, true);
 							if (isShaggy) {
@@ -12909,9 +12900,6 @@ class PlayState extends MusicBeatState
 
 	function popupWindow()
 	{
-		var screenwidth = Application.current.window.display.bounds.width;
-		var screenheight = Application.current.window.display.bounds.height;
-
 		// center
 		Application.current.window.x = Std.int((screenwidth / 2) - (1280 / 2));
 		Application.current.window.y = Std.int((screenheight / 2) - (720 / 2));
