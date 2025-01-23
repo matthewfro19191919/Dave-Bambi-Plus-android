@@ -86,6 +86,40 @@ class Character extends FlxSprite
 				nativelyPlayable = true;
 
 				flipX = true;
+			case 'PaperBF':
+				frames = Paths.getSparrowAtlas('characters/PaperBF', 'shared');
+				
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+				animation.addByPrefix('dodge', "boyfriend dodge", 24, false);
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+				animation.addByPrefix('hit', 'BF hit', 24, false);
+
+				loadOffsetFile(curCharacter);
+
+				skins.set('gfSkin', 'gf');
+				skins.set('3d', 'bf-3d');
+
+				barColor = FlxColor.fromRGB(229, 229, 229);
+
+				playAnim('idle');
+
+				nativelyPlayable = true;
+
+				flipX = true;
+
 			case 'bf-chip':
 				frames = Paths.getSparrowAtlas('chipflake/BOYFRIEND', 'shared');
 				
@@ -338,6 +372,19 @@ class Character extends FlxSprite
 
 				barColor = FlxColor.fromString('#33de39');
 
+				playAnim('danceRight');
+			case 'buddies':
+				frames = Paths.getSparrowAtlas('weeb/gfPixel', 'shared');
+				animation.addByPrefix('danceLeft', 'buddies bop left', 24, false);
+				animation.addByPrefix('danceRight', 'buddies bop right', 24, false);
+				
+				loadOffsetFile(curCharacter);
+
+				globalOffset = [0, 0];
+
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+				antialiasing = false;
 				playAnim('danceRight');
 			case 'gf-pixel':
 				frames = Paths.getSparrowAtlas('weeb/gfPixel', 'shared');
@@ -1306,8 +1353,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 				
 				globalOffset = [0, -350];
-				
-				setGraphicSize(Std.int((width * 0.8) / furiosityScale));
+
 				updateHitbox();
 				
 				playAnim('idle');
@@ -1328,8 +1374,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 				
 				globalOffset = [0, -350];
-				
-				setGraphicSize(Std.int((width * 0.8) / furiosityScale));
+
 				updateHitbox();
 				
 				playAnim('idle');
@@ -2263,6 +2308,23 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 				nativelyPlayable = true;
+			case 'PaperSHAGGY':
+				frames = Paths.getSparrowAtlas('characters/PaperSHAGGY', 'shared');
+				animation.addByPrefix('danceRight', 'shaggy_idle0', 30, false);
+				animation.addByPrefix('danceLeft', 'shaggy_idle2', 30, false);
+				animation.addByPrefix('singUP', 'shaggy_up', 30, false);
+				animation.addByPrefix('singLEFT', 'shaggy_right', 30, false);
+				animation.addByPrefix('singRIGHT', 'shaggy_left', 30, false);
+				animation.addByPrefix('singDOWN', 'shaggy_down', 30, false);
+
+				barColor = FlxColor.fromRGB(217, 217, 217);
+
+				loadOffsetFile(curCharacter);
+				globalOffset = [0, -350];
+
+				playAnim('danceRight');
+
+				nativelyPlayable = true;
 			case 'supershaggy':
 				frames = Paths.getSparrowAtlas('characters/shaggy_super', 'shared');
 				animation.addByPrefix('idle', 'shaggy_sidle', 12, true);
@@ -2864,6 +2926,39 @@ class Character extends FlxSprite
 					barColor = FlxColor.fromRGB(162, 25, 23);
 	
 					playAnim('idle');
+
+			case 'Gummigoo':
+				frames = Paths.getSparrowAtlas('characters/Gummigoo', 'shared');
+				animation.addByPrefix('idle', 'Gummy idle', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', 'Gummy $anim', 24, false);
+				}
+				
+				barColor = FlxColor.fromRGB(255, 209, 27);
+
+				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+				
+				globalOffset = [-20, 40];
+
+				playAnim('idle');
+
+			case 'Sad Gummigoo':
+				frames = Paths.getSparrowAtlas('characters/saddmigoo', 'shared');
+				animation.addByPrefix('idle', 'idle sad', 24, false);
+				for (anim in ['left', 'down', 'up', 'right'])
+				{
+					animation.addByPrefix('sing${anim.toUpperCase()}', '$anim sad', 24, false);
+				}
+				
+				barColor = FlxColor.fromRGB(255, 255, 255);
+
+				loadOffsetFile(curCharacter + (isPlayer ? '-playable' : ''));
+				
+				globalOffset = [-110, 240];
+
+				playAnim('idle');
+
 
 
 		}
