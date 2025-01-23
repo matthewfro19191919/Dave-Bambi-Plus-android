@@ -1975,7 +1975,7 @@ class PlayState extends MusicBeatState
 		var stageName:String = '';
 		switch (bgName)
 		{
-			case 'candy'
+			case 'candy':
 			stageName = 'candy';
 				var STAGE_candyland:BGSprite = new BGSprite('STAGE_candyland', -1000, -535, Paths.image('backgrounds/cricky/candy/candyland'), null, 0.6, 0.6);
 				sprites.add(STAGE_candyland);
@@ -8341,7 +8341,7 @@ class PlayState extends MusicBeatState
 		                        	    FlxTween.tween(black, 1, 10, {ease: FlxEase.backIn});
 		
 		                        	    stageName = 'void';
-		                        	    var STAGE_candyland:BGSprite = new BGSprite('STAGE_candyland', -614, -270, Paths.image('backgrounds/cricky/void/void'), null, 0.6, 0.6);
+		                        	    var STAGE_candyland:BGSprite = new BGSprite('STAGE_candyland', -614, -270, Paths.image('backgrounds/cricky/oid'), null, 0.6, 0.6);
 		                        	    sprites.add(STAGE_candyland);
 		                        	    STAGE_candyland.scale.x = 1.05;
 		                        	    STAGE_candyland.scale.y = 1.05;
