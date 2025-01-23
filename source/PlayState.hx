@@ -1975,6 +1975,26 @@ class PlayState extends MusicBeatState
 		var stageName:String = '';
 		switch (bgName)
 		{
+			case 'candy'
+			stageName = 'candy';
+				var STAGE_candyland:BGSprite = new BGSprite('STAGE_candyland', -1000, -535, Paths.image('backgrounds/cricky/candy/candyland'), null, 0.6, 0.6);
+				sprites.add(STAGE_candyland);
+				STAGE_candyland.scale.x = 2.6;
+				STAGE_candyland.scale.y = 2.6;
+				add(STAGE_candyland);
+				
+				var cockfire:BGSprite = new BGSprite('cockfire', 350, 395, 'backgrounds/cricky/candy/campfire', [
+					new Animation('campfire', 'campfire', 24, true, [false, false])
+				], 0.85, 0.85, true, true);
+				cockfire.animation.play('campfire');
+				
+				sprites.add(cockfire);
+				add(cockfire);
+
+				var truck:BGSprite = new BGSprite('truck', 1050, 105, Paths.image('backgrounds/cricky/candy/truck'), null);
+				sprites.add(truck);
+				add(truck);
+	
 			case 'house' | 'house-night' | 'house-sunset':
 				bgZoom = 0.8;
 				
@@ -7971,6 +7991,38 @@ class PlayState extends MusicBeatState
 					}
 				}
 		}
+		if (!isShaggy && stageName == 'candy') {
+			preRecursedSkin = (formoverride != 'buddies' && boyfriend.curCharacter == formoverride ? formoverride : boyfriend.curCharacter);
+			if (boyfriend.skins.exists('recursed'))
+			{
+				switchBF(boyfriend.skins.get('recursed'), boyfriend.getPosition());
+			}
+			bfGroup.add(boyfriend);
+		}
+		if (stageName == 'candy') {
+			preRecursedSkin = (formoverride != 'buddies' && boyfriend.curCharacter == formoverride ? formoverride : boyfriend.curCharacter);
+			if (boyfriend.skins.exists('recursed'))
+			{
+				switchBF(boyfriend.skins.get('recursed'), boyfriend.getPosition());
+			}
+			bfGroup.add(boyfriend);
+		}
+		if (!isShaggy && stageName == 'void') {
+			preRecursedSkin = (formoverride != 'none' && boyfriend.curCharacter == formoverride ? formoverride : boyfriend.curCharacter);
+			if (boyfriend.skins.exists('recursed'))
+			{
+				switchBF(boyfriend.skins.get('recursed'), boyfriend.getPosition());
+			}
+			bfGroup.add(boyfriend);
+		}
+		if (stageName == 'void') {
+			preRecursedSkin = (formoverride != 'none' && boyfriend.curCharacter == formoverride ? formoverride : boyfriend.curCharacter);
+			if (boyfriend.skins.exists('recursed'))
+			{
+				switchBF(boyfriend.skins.get('recursed'), boyfriend.getPosition());
+			}
+			bfGroup.add(boyfriend);
+		}
 		if (!isShaggy) {
 			preRecursedSkin = (formoverride != 'none' && boyfriend.curCharacter == formoverride ? formoverride : boyfriend.curCharacter);
 			if (boyfriend.skins.exists('recursed'))
@@ -8218,7 +8270,8 @@ class PlayState extends MusicBeatState
 				resyncVocals();
 	
 			switch (SONG.song.toLowerCase())
-			{	case 'porkrind':
+			{
+				case 'porkrind':
 					switch (curBeat)
 					{
 						case 128:
@@ -8245,6 +8298,67 @@ class PlayState extends MusicBeatState
 					            black.alpha = 1;
 					            add(black);
 						    FlxTween.tween(black, 1, 10, {ease: FlxEase.backOut});
+			
+		                	}
+				case 'crikey':
+					switch (curStep)
+					{
+						case 0:
+					            black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+					            black.screenCenter();
+					            black.alpha = 1;
+					            add(black);
+	
+					            indihome = new FlxSprite().loadGraphic(Paths.image("background//intro/intrologo", 'shared'));
+						    indihome.antialiasing = FlxG.save.data.globalAntialiasing;
+					            indihome.screenCenter();
+						    indihome.scale.x = 0.56;
+						    indihome.scale.y = 0.56;
+					            indihome.cameras = [camHUD];
+					            add(indihome);
+						
+						    var sflash:FlxText = new FlxText(0, 0, 10, "", 20);
+						    sflash.setFormat(Paths.font("Nexa-Heavy.ttf") : font, 20 * fontScaler, FlxColor.WHITE);
+						    sflash.borderSize = 1.5;
+						    sflash.borderQuality = 2;
+						    sflash.scrollFactor.set();
+						    sflash.cameras = [camHUD];
+						    sflash.screenCenter();
+						    sflash.text = 'WARNING: FLASHING LIGHTS!';
+        
+						    FlxTween.tween(black, 1, 10, {ease: FlxEase.quadInOut});
+						    FlxTween.tween(indihome, 1, 10, {ease: FlxEase.quadInOut});
+					        case 960:
+					            video.playVideo(Paths.video('cutscene'));
+					            black = new FlxSprite().makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.WHITE);
+					            black.screenCenter();
+					            black.alpha = 1;
+					            add(black);
+						    FlxTween.tween(black, 1, 10, {ease: FlxEase.backOut});
+			                            switchDad('Sad Gummigoo', dad.getPosition(), false);
+			                            switchBF('PaperBF', boyfriend.getPosition(), false);
+		                                    if (!isShaggy) { switchBF('PaperSHAGGY', boyfriend.getPosition(), false); }
+		                        	    FlxTween.tween(black, 1, 10, {ease: FlxEase.backIn});
+		
+		                        	    stageName = 'void';
+		                        	    var STAGE_candyland:BGSprite = new BGSprite('STAGE_candyland', -614, -270, Paths.image('backgrounds/cricky/void/void'), null, 0.6, 0.6);
+		                        	    sprites.add(STAGE_candyland);
+		                        	    STAGE_candyland.scale.x = 1.05;
+		                        	    STAGE_candyland.scale.y = 1.05;
+		                        	    add(STAGE_candyland);
+		                        	    
+		                        	    var cockfire:BGSprite = new BGSprite('cockfire', 0, 0, Paths.image('backgrounds/crikey/void/void_Lighting'), null);
+		                        	    cockfire.scale.x = screenWidth;
+		                        	    cockfire.scale.y = screenHeight;
+		                        	    sprites.add(cockfire);
+		                        	    add(cockfire);
+
+		                        	    sprites.remove(truck);
+		                        	    remove(truck);
+					        case 962:
+					            black.alpha = 0;
+					        case 1620:
+					            video.playVideo(Paths.video('ending'));
 			
 		                	}
 				case 'blocked':
@@ -8647,7 +8761,7 @@ class PlayState extends MusicBeatState
 	
 							regenerateStaticArrows(0);
 							
-							var color = getBackgroundColor(curStage);
+							var color = getBackgroundColor();
 	
 							FlxTween.color(dad, 0.6, dad.color, color);
 							if (formoverride != 'tristan-golden-glowing')
