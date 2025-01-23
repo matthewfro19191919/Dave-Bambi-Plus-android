@@ -1,0 +1,2 @@
+danceLeft -97 14
+danceRight -98 14
