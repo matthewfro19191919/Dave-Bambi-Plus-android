@@ -495,7 +495,7 @@ class PlayState extends MusicBeatState
 	public static var shinxVoice:Bool = false;
 	public static var carVoice:Bool = false;
 	var isShaggy:Bool = false;
-    var isKogre:Bool = false;
+        var isKogre:Bool = false;
 	var isTails:Bool = false;	
 	var isConner:Bool = false;
 	var isChipFlake:Bool = false;
@@ -515,6 +515,8 @@ class PlayState extends MusicBeatState
 	var threedbg:BGSprite;
 	var threedbg2:BGSprite;
 	var threedbg3:BGSprite;
+	
+        var stageName:String = '';
 
 	override public function create()
 	{
@@ -1972,7 +1974,6 @@ class PlayState extends MusicBeatState
 	{
 		var sprites:FlxTypedGroup<BGSprite> = new FlxTypedGroup<BGSprite>();
 		var bgZoom:Float = 0.7;
-		var stageName:String = '';
 		switch (bgName)
 		{
 			case 'candy':
@@ -8342,7 +8343,6 @@ class PlayState extends MusicBeatState
 		
 		                        	    stageName = 'void';
 		                        	    var STAGE_candyland:BGSprite = new BGSprite('STAGE_candyland', -614, -270, Paths.image('backgrounds/cricky/oid'), null, 0.6, 0.6);
-		                        	    sprites.add(STAGE_candyland);
 		                        	    STAGE_candyland.scale.x = 1.05;
 		                        	    STAGE_candyland.scale.y = 1.05;
 		                        	    add(STAGE_candyland);
@@ -8350,10 +8350,9 @@ class PlayState extends MusicBeatState
 		                        	    var cockfire:BGSprite = new BGSprite('cockfire', 0, 0, Paths.image('backgrounds/crikey/void/void_Lighting'), null);
 		                        	    cockfire.scale.x = screenWidth;
 		                        	    cockfire.scale.y = screenHeight;
-		                        	    sprites.add(cockfire);
 		                        	    add(cockfire);
-
-		                        	    sprites.remove(truck);
+                                                     
+		                        	    var truck:BGSprite;
 		                        	    remove(truck);
 					        case 962:
 					            black.alpha = 0;
